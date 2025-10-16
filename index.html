@@ -1,0 +1,1531 @@
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Universidad Garcia Pari - Excelencia Académica</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">    
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <style>
+            /* --- ESTILOS PARA EL CARRUSEL HERO --- */
+            .hero-carousel {                                                                                        
+                width: 100%;
+                height: 100vh;
+            }
+
+            .swiper-slide {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-size: cover;
+                background-position: center;
+                color: #fff;
+                position: relative;
+            }
+
+            .swiper-slide::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.5); 
+            }
+
+            .slide-content {
+                position: relative;
+                z-index: 10;
+                max-width: 800px;
+                padding: 20px;
+                text-align: left;
+            }
+
+            .slide-title {
+                font-size: 2.5rem; 
+                font-weight: 900;
+                color: white;
+                line-height: 1.1;
+            }
+
+            .slide-highlight {
+                font-size: 2.5rem; 
+                font-weight: 900;
+                color: #E6007E;
+                margin-bottom: 1.5rem;
+            }
+
+            .slide-description {
+                font-size: 1.125rem; 
+                color: #f0f0f0;
+                margin-bottom: 2rem; 
+                max-width: 600px;
+            }
+
+            .slide-button {
+                display: inline-block;
+                background-color: #E6007E;
+                color: white;
+                padding: 14px 32px;
+                font-weight: 600;
+                border-radius: 5px;
+                text-decoration: none;
+                transition: background-color 0.3s ease;
+            }
+
+            .slide-button:hover {
+                background-color: #c00069;
+            }
+
+            .swiper-pagination-bullet-active {
+                background-color: #E6007E;
+            }
+
+            .swiper-button-prev, .swiper-button-next {
+                color: white;
+            }
+
+            /* --- ESTILOS GENERALES --- */
+            html {
+                scroll-behavior: smooth;
+                scroll-padding-top: 80px;
+            }
+            
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .section {
+                min-height: 100vh;
+                padding-top: 80px;
+            }
+            
+            .nav-link {
+                position: relative;
+            }
+            
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                width: 0;
+                height: 2px;
+                bottom: -2px;
+                left: 0;
+                background-color: #3b82f6;
+                transition: width 0.3s;
+            }
+            
+            .nav-link:hover::after {
+                width: 100%;
+            }
+            
+            .program-card {
+                transition: transform 0.3s, box-shadow 0.3s;
+            }
+            
+            .program-card:hover {
+                transform: translateY(-5px);
+                box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            }
+            
+            .modal {
+                transition: opacity 0.3s ease, visibility 0.3s;
+            }
+            
+            .modal.hidden {
+                opacity: 0;
+                visibility: hidden;
+            }
+            
+            .news-card {
+                transition: transform 0.3s;
+            }
+            
+            .news-card:hover {
+                transform: scale(1.02);
+            }
+            
+            .event-dot {
+                position: relative;
+            }
+            
+            .event-dot::after {
+                content: '';
+                position: absolute;
+                width: 6px;
+                height: 6px;
+                border-radius: 50%;
+                background-color: #3b82f6;
+                bottom: 2px;
+                left: 50%;
+                transform: translateX(-50%);
+            }
+            
+            .calendar-day {
+                cursor: pointer;
+                transition: background-color 0.2s;
+            }
+            
+            .calendar-day:hover:not(.inactive) {
+                background-color: #dbeafe;
+            }
+            
+            .calendar-day.active {
+                background-color: #3b82f6;
+                color: white;
+            }
+            
+            .calendar-day.inactive {
+                color: #9ca3af;
+            }
+            
+            .hamburger-menu {
+                width: 24px;
+                height: 18px;
+                position: relative;
+                transform: rotate(0deg);
+                transition: .5s ease-in-out;
+                cursor: pointer;
+            }
+            
+            .hamburger-menu span {
+                display: block;
+                position: absolute;
+                height: 2px;
+                width: 100%;
+                background: #111827;
+                border-radius: 9px;
+                opacity: 1;
+                left: 0;
+                transform: rotate(0deg);
+                transition: .25s ease-in-out;
+            }
+            
+            .hamburger-menu span:nth-child(1) {
+                top: 0px;
+            }
+            
+            .hamburger-menu span:nth-child(2), .hamburger-menu span:nth-child(3) {
+                top: 8px;
+            }
+            
+            .hamburger-menu span:nth-child(4) {
+                top: 16px;
+            }
+            
+            .hamburger-menu.open span:nth-child(1) {
+                top: 8px;
+                width: 0%;
+                left: 50%;
+            }
+            
+            .hamburger-menu.open span:nth-child(2) {
+                transform: rotate(45deg);
+            }
+            
+            .hamburger-menu.open span:nth-child(3) {
+                transform: rotate(-45deg);
+            }
+            
+            .hamburger-menu.open span:nth-child(4) {
+                top: 8px;
+                width: 0%;
+                left: 50%;
+            }
+            
+            .slide-down {
+                animation: slideDown 0.5s ease forwards;
+            }
+            
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-10px);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+            
+            .hero-bg {
+                background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.7)), url('https://i.postimg.cc/3RDKS9Cc/487980805-2698878613834013-1754575642248618034-n.jpg');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            
+            .badge {
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+                padding: 0.25rem 0.75rem;
+                border-radius: 9999px;
+                font-size: 0.75rem;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 0.025em;
+                z-index: 10;
+            }
+            
+            .badge-blue {
+                background-color: #dbeafe;
+                color: #1e40af;
+            }
+            
+            .badge-green {
+                background-color: #d1fae5;
+                color: #065f46;
+            }
+            
+            .testimonial-card {
+                transition: transform 0.3s;
+            }
+            
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+            }
+            
+            .stats-item {
+                position: relative;
+            }
+            
+            .stats-item:not(:last-child)::after {
+                content: '';
+                position: absolute;
+                right: 0;
+                top: 20%;
+                height: 60%;
+                width: 1px;
+                background-color: #e5e7eb;
+            }
+            
+            .whatsapp-button {
+                position: fixed;
+                bottom: 30px;
+                right: 30px;
+                width: 60px;
+                height: 60px;
+                background-color: #25D366;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+                z-index: 100;
+                transition: all 0.3s;
+            }
+            
+            .whatsapp-button:hover {
+                transform: scale(1.1);
+                box-shadow: 0 6px 14px rgba(0,0,0,0.4);
+            }
+            
+            .whatsapp-button i {
+                font-size: 30px;
+            }
+
+            /* --- ESTILOS PARA EL MENÚ MÓVIL --- */
+            #mobile-menu {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+                z-index: 1000;
+            }
+
+            #mobile-menu ul {
+                display: flex;
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            #mobile-menu li {
+                width: 100%;
+            }
+
+            #mobile-menu a {
+                display: block;
+                width: 100%;
+                padding: 0.75rem 1.5rem;
+                transition: background-color 0.2s ease;
+            }
+
+            #mobile-menu a:hover {
+                background-color: #f3f4f6;
+            }
+
+            /* --- ANIMACIONES --- */
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            @keyframes bounceIn {
+                0%, 20%, 40%, 60%, 80%, 100% {
+                    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+                }
+                0% {
+                    opacity: 0;
+                    transform: scale3d(.3, .3, .3);
+                }
+                20% {
+                    transform: scale3d(1.1, 1.1, 1.1);
+                }
+                40% {
+                    transform: scale3d(.9, .9, .9);
+                }
+                60% {
+                    opacity: 1;
+                    transform: scale3d(1.03, 1.03, 1.03);
+                }
+                80% {
+                    transform: scale3d(.97, .97, .97);
+                }
+                100% {
+                    opacity: 1;
+                    transform: scale3d(1, 1, 1);
+                }
+            }
+            
+            .animate-bounceIn {
+                animation: bounceIn 1s;
+                animation-delay: 0.3s;
+                animation-fill-mode: both;
+            }
+            <head>
+    // ... existing code ...
+    
+    <style>
+        @keyframes fade-in-up {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slide-in-bottom {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fade-in-up 0.8s ease-out forwards;
+        }
+
+        .animate-slide-in-bottom {
+            animation: slide-in-bottom 0.8s ease-out forwards;
+        }
+
+        .delay-300 {
+            animation-delay: 300ms;
+        }
+    </style>
+</head>
+        </style>
+    </head>
+    <body class="bg-gray-50">
+        <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 bg-white shadow-md z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+
+        <div class="flex items-center">
+        <a href="index.html" class="flex items-center">
+            <img src="https://i.postimg.cc/v864Zvtt/Imagen-de-Whats-App-2025-10-03-a-las-10-53-37-ac07eb72.jpg" alt="Logo" class="h-10 w-10 rounded-full object-cover mr-3">
+            <div class="text-blue-600 font-bold text-3xl">UP<span class="text-gray-800">25</span></div>
+            <span class="ml-2 text-gray-700 font-medium hidden sm:inline">Jesus Lujan Carrion</span>
+        </a>
+
+        <div class="hidden lg:flex items-center space-x-4 ml-6 pl-6 border-l border-gray-300">
+            <a href="https://www.facebook.com/jesus.antonio.garcia.pari.2025?locale=es_LA" target="_blank" class="text-gray-400 hover:text-blue-600 transition-colors text-xl">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="mailto:info@jesuslujancarrion.edu.pe" class="text-gray-400 hover:text-red-500 transition-colors text-xl">
+                <i class="fas fa-envelope"></i>
+            </a>
+            <a href="https://www.instagram.com/jesus_antoniogarciapari/" target="_blank" class="text-gray-400 hover:text-pink-500 transition-colors text-xl">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.youtube.com/@jesusgarciapari602" target="_blank" class="text-gray-400 hover:text-red-600 transition-colors text-xl">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <a href="#" target="_blank" class="text-gray-400 hover:text-blue-700 transition-colors text-xl">
+                <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://www.tiktok.com/@2jess21" target="_blank" class="text-gray-400 hover:text-black transition-colors text-xl">
+                <i class="fab fa-tiktok"></i>
+            </a>
+        </div>
+    </div>
+
+            <nav class="hidden md:flex">
+                <ul class="flex space-x-8">
+                    <li><a href="#programas" class="nav-link text-gray-700 hover:text-blue-600">Programas</a></li>
+                    <li><a href="#admisiones" class="nav-link text-gray-700 hover:text-blue-600">Admisiones</a></li>
+                    <li><a href="#noticias" class="nav-link text-gray-700 hover:text-blue-600">Noticias</a></li>
+                    <li><a href="#eventos" class="nav-link text-gray-700 hover:text-blue-600">Eventos</a></li>
+                    <li><a href="#portal" class="nav-link text-gray-700 hover:text-blue-600">Portal</a></li>
+                    <li><a href="contacto.html" class="nav-link text-gray-700 hover:text-blue-600">Contacto</a></li>
+                    <li><a href="examen pari.html" target="_blank" class="nav-link text-gray-700 hover:text-blue-600">Examen de Admisión</a></li>
+                </ul>
+            </nav>
+
+            <div class="hamburger-menu md:hidden" id="hamburger-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden bg-white shadow-md hidden">
+            <ul class="px-4 py-2">
+                <li><a href="#programas" class="block py-2 text-gray-700 hover:text-blue-600">Programas</a></li>
+                <li><a href="#admisiones" class="block py-2 text-gray-700 hover:text-blue-600">Admisiones</a></li>
+                <li><a href="#noticias" class="block py-2 text-gray-700 hover:text-blue-600">Noticias</a></li>
+                <li><a href="#eventos" class="block py-2 text-gray-700 hover:text-blue-600">Eventos</a></li>
+                <li><a href="#portal" class="block py-2 text-gray-700 hover:text-blue-600">Portal</a></li>
+                <li><a href="contacto.html" class="block py-2 text-gray-700 hover:text-blue-600">Contacto</a></li>
+                <li><a href="examen pari.html" target="_blank" class="block py-2 text-gray-700 hover:text-blue-600">Examen de Admisión</a></li>
+            </ul>
+        </div>
+    </header>
+
+        <!-- WhatsApp Button -->
+        <a href="https://wa.me/56967028321" target="_blank" class="whatsapp-button">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Hero Section -->
+        <section id="inicio" class="swiper hero-carousel">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="background-image: url('https://r.bolder.run/4113/original/955014-harvard.jpg');">
+                    <div class="slide-content">
+                        <h1 class="slide-title">CONSTRUYE TU FUTURO</h1>
+                        <h2 class="slide-highlight">PROFESIONAL CON NOSOTROS</h2>
+                        <p class="slide-description">Formamos líderes comprometidos con la excelencia y la innovación para el mundo del mañana.</p>
+                        <a href="#programas" class="slide-button">Nuestros Programas</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" style="background-image: url('https://statics.exitosanoticias.pe/2024/04/crop/660d61368ee38__940x492.webp');">
+                    <div class="slide-content">
+                        <h1 class="slide-title">ADMISIONES 2025</h1>
+                        <h2 class="slide-highlight">INICIA TU CARRERA HOY</h2>
+                        <p class="slide-description">Descubre un campus moderno y una educación de primer nivel que te abrirá las puertas al mundo.</p>
+                        <a href="#admisiones" class="slide-button">Solicitar Admisión</a>
+                    </div>
+                </div>
+
+                <div class="swiper-slide" style="background-image: url('https://admin.grupo-ekos.com//storage/posts/July2022/show-photo.jpeg');">
+                    <div class="slide-content">
+                        <h1 class="slide-title">EXCELENCIA ACADÉMICA</h1>
+                        <h2 class="slide-highlight">APRENDE DE LOS MEJORES</h2>
+                        <p class="slide-description">Contamos con una plana docente experta y convenios internacionales para potenciar tu aprendizaje.</p>
+                        <a href="#contacto" class="slide-button">Contáctanos</a>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-pagination"></div>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="bg-white py-12 shadow-md">
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                    <div class="stats-item">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600">40+</div>
+                        <div class="text-gray-600 mt-2">Programas Académicos</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600">95%</div>
+                        <div class="text-gray-600 mt-2">Tasa de Empleabilidad</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600">15K+</div>
+                        <div class="text-gray-600 mt-2">Estudiantes Activos</div>
+                    </div>
+                    <div class="stats-item">
+                        <div class="text-3xl md:text-4xl font-bold text-blue-600">85+</div>
+                        <div class="text-gray-600 mt-2">Convenios Internacionales</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="admisiones" class="section bg-[#FFE135] min-h-screen relative animate-fade-in-up">
+    <!-- Logo UPN y redes sociales en la misma altura -->
+    <div class="absolute top-8 w-full px-8 flex justify-between items-center">
+        <!-- Logo UPN -->
+        <div class="flex items-center space-x-4">
+            <div class="h-16 w-16 rounded-full overflow-hidden bg-white">
+                <img src="https://i.postimg.cc/Wb0M1C8V/image.jpg" alt="Logo UPN" class="h-full w-full object-cover">
+            </div>
+            <div>
+                <span class="text-4xl font-bold">
+                    <span class="text-blue-500">UP</span><span class="text-black">25</span>
+                </span>
+                <div class="text-black text-sm font-medium leading-tight">Jesus Lujan Carrion</div>
+            </div>
+        </div>
+
+         <!-- Iconos de redes sociales -->
+        <div class="flex space-x-6">
+            <a href="#" class="text-gray-800 hover:text-blue-600 transition-colors duration-300">
+                <i class="fab fa-facebook-f text-3xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-gray-600 transition-colors duration-300">
+                <i class="far fa-envelope text-3xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-pink-600 transition-colors duration-300">
+                <i class="fab fa-instagram text-3xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-red-600 transition-colors duration-300">
+                <i class="fab fa-youtube text-3xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-blue-400 transition-colors duration-300">
+                <i class="fab fa-linkedin-in text-3xl"></i>
+            </a>
+            <a href="#" class="text-gray-800 hover:text-black transition-colors duration-300">
+                <i class="fab fa-tiktok text-3xl"></i>
+            </a>
+        </div>
+    </div>
+   <div class="container mx-auto px-4 py-16">
+        <!-- Título centrado -->
+        <div class="text-center mb-12 animate-slide-in-bottom">
+            <h2 class="text-5xl md:text-6xl font-bold text-gray-800">TÚ DECIDES</h2>
+            <h3 class="text-4xl md:text-5xl font-bold text-gray-800">CÓMO ESTUDIAR</h3>
+        </div>
+        <div class="flex flex-col md:flex-row gap-8">
+                      <!-- Contenedor flex para imágenes y formulario -->
+        <div class="flex flex-col md:flex-row gap-8">
+            <!-- Columna izquierda para las imágenes -->
+            <div class="md:w-7/12">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div class="relative overflow-hidden rounded-lg h-[400px]">
+                        <div class="absolute top-0 left-0 bg-purple-600 text-white py-1 px-4 rounded-full text-sm font-bold z-10">PRESENCIAL</div>
+                        <img src="https://i.postimg.cc/63pZHPVc/unnamed.jpg" alt="Estudiante presencial" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="relative overflow-hidden rounded-lg h-[400px]">
+                        <div class="absolute top-0 left-0 bg-blue-400 text-white py-1 px-4 rounded-full text-sm font-bold z-10">SEMI-PRESENCIAL</div>
+                        <img src="https://i.postimg.cc/CK1D7t4h/Gemini-Generated-Image-3b18m43b18m43b18.png" alt="Estudiante semi-presencial" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                    
+                    <div class="relative overflow-hidden rounded-lg h-[400px]">
+                        <div class="absolute top-0 left-0 bg-purple-600 text-white py-1 px-4 rounded-full text-sm font-bold z-10">100% VIRTUAL</div>
+                        <img src="https://i.postimg.cc/Wb0M1C8V/image.jpg" alt="Estudiante virtual" class="w-full h-full object-cover rounded-lg">
+                    </div>
+                </div>
+                <!-- Botón de WhatsApp -->
+                <div class="flex justify-center mt-6">
+                    <a href="contacto.html" class="bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg flex items-center transition-colors duration-300">
+                        <i class="fab fa-whatsapp text-2xl mr-2"></i>
+                        Contáctanos
+                    </a>
+                </div>
+            </div>
+
+            <!-- Columna derecha para el formulario -->
+            <div class="md:w-5/12 mt-8 md:mt-0">
+                <div class="bg-white rounded-lg p-8 shadow-lg">
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">DEJA TUS DATOS Y</h3>
+                    <h4 class="text-lg font-bold text-gray-800 mb-6">TE CONTACTAREMOS EN BREVES MINUTOS</h4>
+                    
+                    <form class="space-y-4">
+                        <div class="flex gap-4 mb-4">
+                            <label class="flex items-center">
+                                <input type="radio" name="tipo" value="distancia" checked class="mr-2">
+                                <span>Carreras a distancia</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="tipo" value="pregrado" class="mr-2">
+                                <span>Pregrado</span>
+                            </label>
+                            <label class="flex items-center">
+                                <input type="radio" name="tipo" value="gente" class="mr-2">
+                                <span>Carreras gente que trabaja</span>
+                            </label>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="Nombres" class="w-full px-4 py-2 border rounded">
+                            <input type="text" placeholder="Apellidos" class="w-full px-4 py-2 border rounded">
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <input type="text" placeholder="DNI" class="w-full px-4 py-2 border rounded">
+                            <input type="text" placeholder="Celular" class="w-full px-4 py-2 border rounded">
+                        </div>
+                        
+                        <input type="email" placeholder="Correo electrónico" class="w-full px-4 py-2 border rounded">
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <select class="w-full px-4 py-2 border rounded">
+                                <option>Elige una carrera</option>
+                            </select>
+                            <select class="w-full px-4 py-2 border rounded">
+                                <option>Departamento de resid.</option>
+                            </select>
+                        </div>
+                        
+                        <div class="space-y-2">
+                            <label class="flex items-center text-sm">
+                                <input type="checkbox" class="mr-2">
+                                <span>Autorizo el tratamiento de mis datos personales para finalidades informativas y comerciales...</span>
+                            </label>
+                            <label class="flex items-center text-sm">
+                                <input type="checkbox" class="mr-2">
+                                <span>Opcionalmente, autorizo el tratamiento de mis datos personales para las Finalidades Comerciales Adicionales...</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-yellow-400 text-black font-bold py-3 px-6 rounded hover:bg-yellow-500 transition-colors">Enviar</button>
+                    </form>
+                </div>
+               <!-- Nuevo botón de Examen de Admisión -->
+                <div class="mt-4 text-center">
+                    <a href="examen pari.html" target="_blank" class="inline-block bg-purple-600 text-white font-bold py-3 px-8 rounded-lg hover:bg-purple-700 transition-colors duration-300">
+                        <i class="fas fa-file-alt mr-2"></i>
+                        Examen de Admisión
+
+                    </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+       <!-- Programas Section -->
+<section id="programas" class="section bg-gray-50 py-20">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Información Académica y Programas</h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">Descubre nuestra amplia oferta académica diseñada para impulsar tu desarrollo profesional en diversos campos del conocimiento.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Programa 1 -->
+<div class="program-card group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+  <div class="relative">
+    <div class="absolute top-4 left-4 z-10">
+      <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Destacado</span>
+    </div>
+    <div class="h-80 w-full overflow-hidden flex justify-center items-center bg-gray-100">
+      <img src="https://i.postimg.cc/3JqrKnTh/image.png"
+           alt="Medicina de alpacas"
+           class="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110 rounded-t-xl">
+    </div>
+  </div>
+
+  <div class="p-8">
+    <div class="flex items-center mb-4">
+      <i class="fas fa-stethoscope text-blue-600 mr-2"></i>
+      <span class="text-blue-600 font-semibold">Facultad de Ciencias de la Salud</span>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+      Medicina de Alpacas
+    </h3>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Conviértete en un especialista veterinario enfocado en el cuidado y tratamiento de alpacas y otros camélidos sudamericanos.
+    </p>
+    <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+      <div class="flex items-center text-gray-500">
+        <i class="far fa-clock mr-2"></i>
+        <span>Duración 10 semestres</span>
+      </div>
+      <button onclick="openModal()" class="bg-gray-50 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="programModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 hidden">
+  <div class="bg-white rounded-xl shadow-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto">
+    <div class="sticky top-0 bg-white p-6 border-b border-gray-200 flex justify-between items-center rounded-t-xl">
+      <h2 class="text-2xl font-bold text-gray-900">Medicina de Alpacas</h2>
+      <button onclick="closeModal()" class="text-gray-500 hover:text-gray-700 text-xl">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    
+    <div class="p-6">
+      <div class="flex items-center mb-4">
+        <i class="fas fa-stethoscope text-blue-600 mr-2"></i>
+        <span class="text-blue-600 font-semibold">Facultad de Ciencias de la Salud</span>
+      </div>
+      
+      <p class="text-gray-700 mb-6">
+        La carrera de Medicina de Alpacas te prepara para convertirte en un especialista veterinario enfocado en el cuidado y tratamiento de alpacas y otros camélidos sudamericanos. Aprenderás sobre anatomía, fisiología, nutrición, reproducción y enfermedades específicas de estas especies, así como técnicas de diagnóstico y tratamientos veterinarios especializados.
+      </p>
+      
+      <div class="mb-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Detalles del Programa</h3>
+        <ul class="space-y-2">
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center">
+              <div class="h-4 w-4 border-2 border-gray-400 rounded-sm"></div>
+            </div>
+            <span class="ml-3 text-gray-700">Duración: 10 semestres</span>
+          </li>
+          <li class="flex items-start">
+            <div class="flex-shrink-0 h-6 w-6 flex items-center justify-center">
+              <div class="h-4 w-4 border-2 border-blue-600 bg-blue-600 rounded-sm flex items-center justify-center">
+                <i class="fas fa-check text-white text-xs"></i>
+              </div>
+            </div>
+            <span class="ml-3 text-gray-700">Nivel: Licenciatura</span>
+          </li>
+        </ul>
+      </div>
+      
+      <div class="mb-6">
+        <h3 class="text-xl font-bold text-gray-800 mb-3">Perfil de Egreso</h3>
+        <p class="text-gray-700">
+          El egresado estará capacitado para diagnosticar, tratar y prevenir enfermedades en alpacas y otros camélidos, implementar programas de reproducción y mejoramiento genético, asesorar en nutrición especializada y gestionar unidades productivas dedicadas a la crianza de estas especies tan importantes para la economía de las regiones altoandinas.
+        </p>
+      </div>
+      
+      <div class="flex justify-center mt-8">
+        <button class="bg-blue-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+          Solicitar Información
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function openModal() {
+  document.getElementById('programModal').classList.remove('hidden');
+}
+
+function closeModal() {
+  document.getElementById('programModal').classList.add('hidden');
+}
+
+// Cerrar modal al hacer clic fuera del contenido
+document.getElementById('programModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeModal();
+  }
+});
+</script>
+<!-- Programa 2 -->
+<div class="program-card group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+  <div class="relative">
+    <div class="absolute top-4 left-4 z-10">
+      <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Destacado</span>
+    </div>
+    <div class="h-80 w-full overflow-hidden flex justify-center items-center bg-gray-100">
+      <img src="https://i.postimg.cc/bYtds73F/image.png" 
+           alt="Medicina de alpacas" 
+           class="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110 rounded-t-xl">
+    </div>
+  </div>
+
+  <div class="p-8">
+    <div class="flex items-center mb-4">
+      <i class="fas fa-hard-hat text-blue-600 mr-2"></i>
+      <span class="text-blue-600 font-semibold">Facultad de Ciencias de la Salud</span>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+      Medicina de alpacas
+    </h3>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Forma parte de los profesionales que transforman la salud con innovación y excelencia.
+    </p>
+    <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+      <div class="flex items-center text-gray-500">
+        <i class="far fa-clock mr-2"></i>
+        <span>Duración 10 semestres</span>
+      </div>
+      <button class="bg-gray-50 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
+
+                    
+                  <!-- Programa 3 -->
+<div class="program-card group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+  <div class="relative">
+    <div class="absolute top-4 left-4 z-10">
+      <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Destacado</span>
+    </div>
+    <div class="h-80 w-full overflow-hidden flex justify-center items-center bg-gray-100">
+      <img src="https://i.postimg.cc/c6GvLmpH/image.png" 
+           alt="Analista de Créditos" 
+           class="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110 rounded-t-xl">
+    </div>
+  </div>
+
+  <div class="p-8">
+    <div class="flex items-center mb-4">
+      <i class="fas fa-hard-hat text-blue-600 mr-2"></i>
+      <span class="text-blue-600 font-semibold">Facultad de Economía y Finanzas</span>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+      Analista de Créditos
+    </h3>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Desarrolla habilidades en evaluación crediticia, análisis financiero y gestión responsable de préstamos.
+    </p>
+    <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+      <div class="flex items-center text-gray-500">
+        <i class="far fa-clock mr-2"></i>
+        <span>Duración 10 semestres</span>
+      </div>
+      <button class="bg-gray-50 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
+
+                   <!-- Programa 4 -->
+<div class="program-card group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+  <div class="relative">
+    <div class="absolute top-4 left-4 z-10">
+      <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Destacado</span>
+    </div>
+    <div class="h-80 w-full overflow-hidden flex justify-center items-center bg-gray-100">
+      <img src="https://i.postimg.cc/Cx3F8NJW/image.png" 
+           alt="Administración de Empresas" 
+           class="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110 rounded-t-xl">
+    </div>
+  </div>
+
+  <div class="p-8">
+    <div class="flex items-center mb-4">
+      <i class="fas fa-briefcase text-blue-600 mr-2"></i>
+      <span class="text-blue-600 font-semibold">Facultad de Economía y Negocios</span>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+      Administración de Empresas
+    </h3>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Desarrolla habilidades directivas, liderazgo y gestión empresarial para crear y dirigir organizaciones competitivas.
+    </p>
+    <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+      <div class="flex items-center text-gray-500">
+        <i class="far fa-clock mr-2"></i>
+        <span>Duración 10 semestres</span>
+      </div>
+      <button class="bg-gray-50 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
+
+                  <!-- Programa 5 -->
+<div class="program-card group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+  <div class="relative">
+    <div class="absolute top-4 left-4 z-10">
+      <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Destacado</span>
+    </div>
+    <div class="h-80 w-full overflow-hidden flex justify-center items-center bg-gray-100">
+      <img src="https://i.postimg.cc/ry7c3g20/image.png" 
+           alt="Panadería Nuclear" 
+           class="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110 rounded-t-xl">
+    </div>
+  </div>
+
+  <div class="p-8">
+    <div class="flex items-center mb-4">
+      <i class="fas fa-utensils text-blue-600 mr-2"></i>
+      <span class="text-blue-600 font-semibold">Facultad de Panificación e Innovación</span>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+      Panadería Nuclear
+    </h3>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Aprende las técnicas más innovadoras en panificación avanzada, combinando ciencia, precisión y creatividad culinaria.
+    </p>
+    <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+      <div class="flex items-center text-gray-500">
+        <i class="far fa-clock mr-2"></i>
+        <span>Duración 10 semestres</span>
+      </div>
+      <button class="bg-gray-50 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
+
+               <!-- Programa 6 -->
+<div class="program-card group bg-white rounded-xl shadow-lg overflow-hidden transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
+  <div class="relative">
+    <div class="absolute top-4 left-4 z-10">
+      <span class="bg-blue-600 text-white text-sm font-semibold px-3 py-1 rounded-full">Destacado</span>
+    </div>
+    <div class="h-80 w-full overflow-hidden flex justify-center items-center bg-gray-100">
+      <img src="https://i.postimg.cc/qvDdcGLY/image.png" 
+           alt="Psicólogo de especiales" 
+           class="w-full h-full object-cover object-center transform transition-transform duration-300 group-hover:scale-110 rounded-t-xl">
+    </div>
+  </div>
+
+  <div class="p-8">
+    <div class="flex items-center mb-4">
+      <i class="fas fa-brain text-blue-600 mr-2"></i>
+      <span class="text-blue-600 font-semibold">Facultad de Ciencias Humanas</span>
+    </div>
+    <h3 class="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+      Psicología de Especiales
+    </h3>
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      Comprende el comportamiento humano y promueve el bienestar psicológico con empatía, ciencia y compromiso.
+    </p>
+    <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+      <div class="flex items-center text-gray-500">
+        <i class="far fa-clock mr-2"></i>
+        <span>Duración 10 semestres</span>
+      </div>
+      <button class="bg-gray-50 text-blue-600 px-6 py-2 rounded-lg font-semibold hover:bg-blue-50 transition-colors group-hover:bg-blue-600 group-hover:text-white">
+        Ver más
+      </button>
+    </div>
+  </div>
+</div>
+
+ </section>
+<!-- Founder Section -->
+<section class="bg-gray-800 py-16">
+    <div class="max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div class="flex justify-center" data-aos="fade-right" data-aos-duration="1000">
+                <img src="https://i.postimg.cc/v864Zvtt/Imagen-de-Whats-App-2025-10-03-a-las-10-53-37-ac07eb72.jpg" alt="Foto del Fundador" class="rounded-lg shadow-xl w-4/5 md:w-full h-auto">
+            </div>
+                    <div class="text-center md:text-left" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white mb-3">Conoce a Nuestro Fundador</h2>
+                        <p class="text-xl font-semibold text-blue-400 mb-5">Jesus Lujan Carrion</p>
+                        <p class="text-gray-300 mb-3 text-left">
+                            Con una visión clara de transformar la educación y el futuro de nuestra región, Jesus Lujan Carrion sentó las bases de lo que hoy es una institución líder en excelencia académica. Su compromiso con la innovación y el acceso a una educación de calidad ha sido el pilar fundamental de nuestra universidad desde su creación.
+                        </p>
+                        <p class="text-gray-300 text-left">
+                            "Creemos que cada estudiante tiene el potencial de cambiar el mundo. Nuestra misión es darles las herramientas, el conocimiento y la confianza para que lo logren". Este lema sigue guiando cada uno de nuestros pasos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+    
+       <section class="bg-blue-50 py-16">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Voces de nuestra comunidad</h2>
+            <p class="text-gray-600 text-lg max-w-3xl mx-auto">Conoce las experiencias de estudiantes y egresados que han construido su futuro profesional con nosotros.</p>
+        </div>
+        
+        <!-- Grid de testimonios con animación al hacer hover -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <div class="testimonial-card bg-white rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-4">
+                    <div class="h-16 w-16 rounded-full overflow-hidden mr-4 border-2 border-blue-500">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ15cdl91uuZ0M6idU3roI9PlfGJ9eQ9jBTj1lXF0ddgu7Jdd3GjIAezcMQnuFKOvuWQOs&usqp=CAU" alt="makanaki la realeza" class="h-full w-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-xl">Makanaky</h4>
+                        <p class="text-sm text-gray-500">Egresado de psicólogia de especiales</p>
+                    </div>
+                </div>
+                <div class="text-yellow-400 mb-3 text-lg">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-600 italic">"yo me pregunto y me pongo a pensar en k momento la kgue, si yo estaba volando.... volando.... volando... uhhhhhhhh volando en mi puto exito, oh siiiiii la puta famaa."</p>
+            </div>
+            
+            <div class="testimonial-card bg-white rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-4">
+                    <div class="h-16 w-16 rounded-full overflow-hidden mr-4 border-2 border-blue-500">
+                        <img src="data:image/jpeg;base64,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" alt="Carlos Mendoza" class="h-full w-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-xl">Chupetin Trujillo</h4>
+                        <p class="text-sm text-gray-500">Estudiante de ingeneria de llenado de techo de calaminas</p>
+                    </div>
+                </div>
+                <div class="text-yellow-400 mb-3 text-lg">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+                <p class="text-gray-600 italic">"la que algun dia sea mi enamorada y vea este video k puedo hacer ps mamita chamba es chamba."</p>
+            </div>
+            
+            <div class="testimonial-card bg-white rounded-lg shadow-md p-6 transform transition-transform duration-300 hover:scale-105">
+                <div class="flex items-center mb-4">
+                    <div class="h-16 w-16 rounded-full overflow-hidden mr-4 border-2 border-blue-500">
+                        <img src="data:image/jpeg;base64,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" alt="Cuto Guadalupe" class="h-full w-full object-cover">
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-xl">Cuto Guadalupe</h4>
+                        <p class="text-sm text-gray-500">Egresado de psicologo de especiales</p>
+                    </div>
+                </div>
+                <div class="text-yellow-400 mb-3 text-lg">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-gray-600 italic">"la fee la fee es lo mas lindo de la vida, tengo hambreeeeeeeeeeeeeeeeeeeeeeeeee ."</p>
+            </div>
+        </div>
+
+        
+</section>
+
+        <div id="news-modal" class="modal hidden fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white rounded-lg shadow-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto">
+                <div class="p-6 border-b">
+                    <div class="flex justify-between items-center">
+                        <h3 id="news-modal-title" class="text-2xl font-bold text-gray-800">Título de la noticia</h3>
+                        <button class="close-news-modal text-gray-400 hover:text-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="news-modal-content" class="p-6">
+                    </div>
+                <div class="p-6 border-t bg-gray-50 flex justify-between">
+                    <div class="text-sm text-gray-500">
+                        <span id="news-modal-date">Fecha</span> | <span id="news-modal-category">Categoría</span>
+                    </div>
+                    <button class="close-news-modal px-4 py-2 bg-gray-200 text-gray-800 rounded hover:bg-gray-300">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        <section id="eventos" class="section bg-gray-50">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Eventos</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">Descubre las actividades académicas, culturales y sociales que forman parte de nuestra vibrante vida universitaria.</p>
+                </div>
+                <div class="max-w-4xl mx-auto bg-white rounded-lg shadow-md p-8">
+                    <div class="flex justify-between items-center mb-6">
+                        <button id="prev-month" class="text-blue-600 hover:text-blue-800">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                        </button>
+                        <h3 id="current-month-year" class="text-xl font-bold text-gray-800">Mayo 2025</h3>
+                        <button id="next-month" class="text-blue-600 hover:text-blue-800">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                    </div>
+                    <div class="grid grid-cols-7 text-center text-gray-500 font-medium">
+                        <div class="py-2">Dom</div>
+                        <div class="py-2">Lun</div>
+                        <div class="py-2">Mar</div>
+                        <div class="py-2">Mié</div>
+                        <div class="py-2">Jue</div>
+                        <div class="py-2">Vie</div>
+                        <div class="py-2">Sáb</div>
+                    </div>
+                    <div id="calendar-days" class="grid grid-cols-7 border-t">
+                        </div>
+                </div>
+                <div id="event-details" class="max-w-4xl mx-auto mt-8 bg-white rounded-lg shadow-md p-6 hidden">
+                    <h3 id="event-date" class="text-lg font-semibold text-blue-600 mb-4">Eventos para el 15 de Mayo, 2025</h3>
+                    <div id="events-list">
+                        </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="portal" class="section bg-white">
+            <div class="container mx-auto px-4 py-16">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-2">Portal de Estudiantes</h2>
+                    <p class="text-gray-600 text-lg max-w-3xl mx-auto">Accede a los recursos académicos y servicios digitales diseñados para apoyar tu proceso de aprendizaje.</p>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-gradient-to-br from-blue-500 to-blue-700 text-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-5xl mb-4">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Aulas Virtuales</h3>
+                        <p class="mb-6">Accede a tus cursos en línea, materiales de estudio y actividades académicas.</p>
+                        <a href="javascript:void(0)" target="_blank" class="inline-block bg-white text-blue-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">Ingresar</a>
+                    </div>
+                    <div class="bg-gradient-to-br from-teal-500 to-teal-700 text-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-5xl mb-4">
+                            <i class="fas fa-book-open"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Biblioteca Digital</h3>
+                        <p class="mb-6">Explora nuestra colección de libros, revistas y recursos de investigación en línea.</p>
+                        <a href="javascript:void(0)" target="_blank" class="inline-block bg-white text-teal-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">Ingresar</a>
+                    </div>
+                    <div class="bg-gradient-to-br from-purple-500 to-purple-700 text-white rounded-lg shadow-lg p-8 text-center">
+                        <div class="text-5xl mb-4">
+                            <i class="fas fa-users-cog"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4">Servicios Estudiantiles</h3>
+                        <p class="mb-6">Gestiona trámites, consulta tu historial académico y accede a soporte.</p>
+                        <a href="javascript:void(0)" target="_blank" class="inline-block bg-white text-purple-600 px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">Ingresar</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Nuestra Ubicación</h3>
+                        <div class="space-y-4 text-gray-700">
+                            <p class="flex items-center"><i class="fas fa-map-marker-alt text-blue-600 mr-3"></i>paradero 11 casa de pari </p>
+                            <p class="flex items-center"><i class="fas fa-phone-alt text-blue-600 mr-3"></i> +56 9 6702 8321</p>
+                            <p class="flex items-center"><i class="fas fa-envelope text-blue-600 mr-3"></i> info@jesuslujancarrion.edu.pe</p>
+                            <p class="flex items-center"><i class="fas fa-clock text-blue-600 mr-3"></i> Lun - Vie: 9:00 AM - 6:00 PM</p>
+                        </div>
+                        <div class="mt-8">
+                            <h4 class="font-semibold text-gray-800 mb-3">Síguenos en redes:</h4>
+                            <div class="flex space-x-4">
+                                <a href="javascript:void(0)" target="_blank" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                                <a href="javascript:void(0)" target="_blank" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-twitter"></i></a>
+                                <a href="javascript:void(0)" target="_blank" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-instagram"></i></a>
+                                <a href="javascript:void(0)" target="_blank" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://wa.me/56967028321" target="_blank" class="text-blue-600 hover:text-blue-800 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-lg shadow-md p-8">
+                        <h3 class="text-2xl font-bold text-gray-800 mb-6">Envíanos un Mensaje</h3>
+                        <form id="contact-form" class="space-y-4">
+                            <div>
+                                <label for="contact-name" class="block text-gray-700 font-medium mb-2">Tu Nombre *</label>
+                                <input type="text" id="contact-name" name="contact-name" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="contact-email" class="block text-gray-700 font-medium mb-2">Tu Correo *</label>
+                                <input type="email" id="contact-email" name="contact-email" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="contact-subject" class="block text-gray-700 font-medium mb-2">Asunto *</label>
+                                <input type="text" id="contact-subject" name="contact-subject" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="contact-message" class="block text-gray-700 font-medium mb-2">Tu Mensaje *</label>
+                                <textarea id="contact-message" name="contact-message" rows="5" class="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            </div>
+                            <button type="submit" class="bg-blue-600 text-white py-3 px-6 rounded-md font-medium hover:bg-blue-700 transition">Enviar Mensaje</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Resto del código continúa aquí... -->
+        
+        <!-- Footer -->
+        <footer class="bg-gray-800 text-white py-12">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="text-blue-400 font-bold text-3xl mb-4">UP<span class="text-white">25</span></div>
+                    <p class="text-gray-400 text-sm">Formando profesionales de excelencia, innovadores y comprometidos con el desarrollo de la sociedad.</p>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="javascript:void(0)" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f text-lg"></i></a>
+                        <a href="javascript:void(0)" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-twitter text-lg"></i></a>
+                        <a href="javascript:void(0)" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-instagram text-lg"></i></a>
+                        <a href="javascript:void(0)" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-linkedin-in text-lg"></i></a>
+                        <a href="https://wa.me/56967028321" target="_blank" class="text-gray-400 hover:text-white"><i class="fab fa-whatsapp text-lg"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Enlaces Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#programas" class="text-gray-400 hover:text-white transition">Programas</a></li>
+                        <li><a href="#admisiones" class="text-gray-400 hover:text-white transition">Admisiones</a></li>
+                        <li><a href="#noticias" class="text-gray-400 hover:text-white transition">Noticias</a></li>
+                        <li><a href="#eventos" class="text-gray-400 hover:text-white transition">Eventos</a></li>
+                        <li><a href="#portal" class="text-gray-400 hover:text-white transition">Portal</a></li>
+                        <li><a href="examen pari.html" target="_blank" class="text-gray-400 hover:text-white transition">Examen de Admisión</a></li>
+                    </ul>
+              
+</section>  </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Contáctanos</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Av. Siempre Viva 742, Lima, Perú</li>
+                        <li><i class="fas fa-phone-alt mr-2"></i> +51 1 234 5678</li>
+                        <li><i class="fas fa-envelope mr-2"></i> info@jesuslujancarrion.edu.pe</li>
+                        <li><i class="fab fa-whatsapp mr-2"></i> <a href="https://wa.me/56967028321" target="_blank" class="hover:text-white">+56 9 6702 8321</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Boletín Informativo</h3>
+                    <p class="text-gray-400 mb-4">Suscríbete a nuestro boletín para recibir las últimas noticias y actualizaciones.</p>
+                    <form id="newsletter-form" class="flex flex-col space-y-3">
+                        <input type="email" id="newsletter-email" placeholder="Tu correo electrónico" class="px-4 py-2 rounded-md bg-gray-700 border border-gray-600 text-white focus:outline-none focus:border-blue-500">
+                        <p class="text-red-400 text-sm hidden" id="newsletter-error-message">Por favor, introduce un correo electrónico válido.</p>
+                        <button type="submit" class="bg-blue-600 text-white py-2 rounded-md font-medium hover:bg-blue-700 transition">Suscribirse</button>
+                    </form>
+                </div>
+            </div>
+            <div class="text-center text-gray-500 text-sm mt-8 border-t border-gray-700 pt-8">
+                © 2025 Jesus Lujan Carrion. Todos los derechos reservados.
+            </div>
+        </footer>
+
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script>
+            // Inicializar Swiper
+            const swiper = new Swiper('.swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 5000,
+                    disableOnInteraction: false,
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // Mobile menu toggle
+            const hamburgerMenu = document.getElementById('hamburger-menu');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (hamburgerMenu && mobileMenu) {
+                hamburgerMenu.addEventListener('click', () => {
+                    hamburgerMenu.classList.toggle('open');
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close mobile menu when a link is clicked
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        hamburgerMenu.classList.remove('open');
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            // Load more news
+    const loadMoreNewsBtn = document.getElementById('load-more-news');
+    const newsContainer = document.getElementById('news-container');
+    if (loadMoreNewsBtn && newsContainer) {
+        loadMoreNewsBtn.addEventListener('click', function() {
+            const moreNews = [
+                {
+                    image: 'https://cdn.pixabay.com/photo/2017/08/10/14/02/debate-2623555_1280.jpg',
+                    date: '30 de Abril, 2025',
+                    title: 'Estudiantes ganan competencia internacional de debate',
+                    excerpt: 'El equipo de debate representó a nuestra universidad y obtuvo el primer lugar en la competencia internacional celebrada en París.',
+                    id: '4'
+                },
+                {
+                    image: 'https://cdn.pixabay.com/photo/2017/07/31/11/21/people-2557399_1280.jpg',
+                    date: '25 de Abril, 2025',
+                    title: 'Simposio sobre desarrollo sostenible reúne a expertos mundiales',
+                    excerpt: 'Más de 30 especialistas de diferentes países participaron en el evento organizado por nuestra Facultad de Ciencias Ambientales.',
+                    id: '5'
+                },
+                {
+                    image: 'https://cdn.pixabay.com/photo/2018/02/01/19/21/student-3124568_1280.jpg',
+                    date: '20 de Abril, 2025',
+                    title: 'Programa de becas amplía cobertura para estudiantes internacionales',
+                    excerpt: 'La universidad incrementó en un 40% el presupuesto destinado a becas para estudiantes extranjeros de alto rendimiento.',
+                    id: '6'
+                }
+            ];
+            
+            moreNews.forEach(news => {
+                const newsCard = document.createElement('div');
+                newsCard.className = 'news-card bg-white rounded-lg shadow-md overflow-hidden';
+                newsCard.innerHTML = `
+                    <div class="h-48 overflow-hidden">
+                        <img src="${news.image}" alt="${news.title}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-sm text-gray-500 mb-2">${news.date}</div>
+                        <h3 class="text-xl font-semibold mb-3">${news.title}</h3>
+                        <p class="text-gray-600 mb-4">${news.excerpt}</p>
+                        <button class="view-news text-blue-600 font-medium hover:text-blue-800" data-news="${news.id}">Leer más</button>
+                    </div>
+                `;
+                newsContainer.appendChild(newsCard);
+            });
+            
+            loadMoreNewsBtn.style.display = 'none'; // Oculta el botón después de cargar
+        });
+    }
+            // Calendar Logic
+    const calendarDays = document.getElementById('calendar-days');
+    const currentMonthYear = document.getElementById('current-month-year');
+    const prevMonthBtn = document.getElementById('prev-month');
+    const nextMonthBtn = document.getElementById('next-month');
+    const eventDetails = document.getElementById('event-details');
+    const eventDateTitle = document.getElementById('event-date');
+    const eventsList = document.getElementById('events-list');
+
+    let currentDate = new Date();
+    let currentMonth = 9; // 9 = Octubre
+    let currentYear = 2025;
+
+    const events = {
+        // Formato: 'YYYY-MM-DD': [{ title: '...', time: '...', location: '...' }]
+        '2025-05-15': [
+            { title: 'Conferencia de IA Generativa', time: '10:00 AM', location: 'Auditorio Principal' },
+            { title: 'Taller de Programación Web', time: '02:00 PM', location: 'Laboratorio 301' }
+        ],
+        '2025-05-20': [
+            { title: 'Feria de Empleabilidad', time: '09:00 AM - 05:00 PM', location: 'Plaza Central' }
+        ],
+        '2025-06-05': [
+            { title: 'Webinar: Futuro de la Biotecnología', time: '04:00 PM', location: 'Online' }
+        ],
+        '2025-07-10': [
+            { title: 'Día de Puertas Abiertas', time: '09:00 AM - 01:00 PM', location: 'Campus Universitario' }
+        ]
+    };
+
+    function renderCalendar() {
+        calendarDays.innerHTML = '';
+        eventDetails.classList.add('hidden'); // Oculta detalles al cambiar de mes
+
+        const firstDayOfMonth = new Date(currentYear, currentMonth, 1);
+        const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
+        const firstDayOfWeek = firstDayOfMonth.getDay();
+
+        currentMonthYear.textContent = new Date(currentYear, currentMonth).toLocaleString('es-ES', { month: 'long', year: 'numeric' });
+
+        for (let i = 0; i < firstDayOfWeek; i++) {
+            const emptyDiv = document.createElement('div');
+            emptyDiv.classList.add('calendar-day', 'py-3', 'text-center', 'inactive');
+            calendarDays.appendChild(emptyDiv);
+        }
+
+        for (let day = 1; day <= daysInMonth; day++) {
+            const dayDiv = document.createElement('div');
+            dayDiv.classList.add('calendar-day', 'py-3', 'text-center', 'relative');
+            dayDiv.textContent = day;
+
+            const fullDate = `${currentYear}-${(currentMonth + 1).toString().padStart(2, '0')}-${day.toString().padStart(2, '0')}`;
+
+            if (events[fullDate]) {
+                dayDiv.classList.add('event-dot');
+            }
+
+            dayDiv.addEventListener('click', () => showEvents(day, fullDate));
+            calendarDays.appendChild(dayDiv);
+        }
+    }
+
+    function showEvents(day, fullDate) {
+        eventDateTitle.textContent = `Eventos para el ${day} de ${new Date(currentYear, currentMonth).toLocaleString('es-ES', { month: 'long' })}, ${currentYear}`;
+        eventsList.innerHTML = '';
+
+        const dayEvents = events[fullDate];
+        if (dayEvents && dayEvents.length > 0) {
+            dayEvents.forEach(event => {
+                const eventItem = document.createElement('div');
+                eventItem.classList.add('bg-gray-100', 'p-4', 'rounded-md', 'mb-3');
+                eventItem.innerHTML = `
+                    <h4 class="font-semibold text-gray-800">${event.title}</h4>
+                    <p class="text-sm text-gray-600"><i class="far fa-clock mr-2"></i>${event.time}</p>
+                    <p class="text-sm text-gray-600"><i class="fas fa-map-marker-alt mr-2"></i>${event.location}</p>
+                `;
+                eventsList.appendChild(eventItem);
+            });
+        } else {
+            eventsList.innerHTML = '<p class="text-gray-600">No hay eventos para esta fecha.</p>';
+        }
+        eventDetails.classList.remove('hidden');
+    }
+
+    prevMonthBtn.addEventListener('click', () => {
+        currentMonth--;
+        if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+        }
+        renderCalendar();
+    });
+
+    nextMonthBtn.addEventListener('click', () => {
+        currentMonth++;
+        if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+        }
+        renderCalendar();
+    });
+
+    renderCalendar(); // Dibuja el calendario inicial al cargar la página
+        </script>
+        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+        <script>
+            AOS.init();
+        </script>
+    </body>
+    </html>
+
+
+
+
+
+
+
