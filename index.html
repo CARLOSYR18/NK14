@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-  <style id="app-style">
+  <style>
     :root {
       --primary-color: #1a1a1a;
       --secondary-color: #c59d5f;
@@ -584,6 +584,12 @@
       }
     }
     
+    @media (min-width: 769px) {
+      .nav-menu, .mobile-menu-overlay {
+        display: none !important;
+      }
+    }
+    
     @media (max-width: 480px) {
       .hero-text {
         font-size: 2rem !important;
@@ -670,189 +676,189 @@
     </div>
   </section>
 
- <!-- Gallery Section -->
-<section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12 md:mb-16 fade-in">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Galería de <span class="text-[#c59d5f]">Cortes</span></h2>
-      <div class="section-divider mx-auto w-16 h-1 bg-[#c59d5f] mb-4"></div>
-      <p class="mt-4 text-gray-300 max-w-2xl mx-auto px-4">
-        Explora nuestra colección de los mejores estilos y cortes realizados por nuestros barberos expertos
-      </p>
+  <!-- Gallery Section -->
+  <section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Galería de <span class="text-[#c59d5f]">Cortes</span></h2>
+        <div class="section-divider mx-auto w-16 h-1 bg-[#c59d5f] mb-4"></div>
+        <p class="mt-4 text-gray-300 max-w-2xl mx-auto px-4">
+          Explora nuestra colección de los mejores estilos y cortes realizados por nuestros barberos expertos
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 gallery-grid">
+        <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
+          <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
+            <img src="https://i.postimg.cc/NM1tWgmn/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 1">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
+            <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Clásico</p>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
+          <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
+            <img src="https://i.postimg.cc/9Q4v6mj0/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 2">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
+            <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Moderno</p>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
+          <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
+            <img src="https://i.postimg.cc/FKVGq81G/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 3">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
+            <p class="text-[#c59d5f] text-center text-sm font-bold">Fade Perfecto</p>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
+          <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
+            <img src="https://i.postimg.cc/XJh5DkK5/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 4">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
+            <p class="text-[#c59d5f] text-center text-sm font-bold">Barba Estilizada</p>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
+          <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
+            <img src="https://i.postimg.cc/MpDBDk9Y/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 5">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
+            <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Urbano</p>
+          </div>
+        </div>
+
+        <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
+          <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
+            <img src="https://i.postimg.cc/MTkzfH1r/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 6">
+            <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
+            </div>
+          </div>
+          <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
+            <p class="text-[#c59d5f] text-center text-sm font-bold">Corte Premium</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+        <button class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
+        <img src="" alt="Lightbox Image" class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain">
+        <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 md:gap-8">
+          <button id="prev-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors">
+            <i class="fas fa-chevron-left"></i>
+          </button>
+          <button id="next-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors">
+            <i class="fas fa-chevron-right"></i>
+          </button>
+        </div>
+      </div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 gallery-grid">
-      <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
-        <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
-          <img src="https://i.postimg.cc/NM1tWgmn/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 1">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
-          </div>
-        </div>
-        <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Clásico</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
-        <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
-          <img src="https://i.postimg.cc/9Q4v6mj0/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 2">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
-          </div>
-        </div>
-        <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Moderno</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
-        <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
-          <img src="https://i.postimg.cc/FKVGq81G/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 3">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
-          </div>
-        </div>
-        <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Fade Perfecto</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
-        <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
-          <img src="https://i.postimg.cc/XJh5DkK5/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 4">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
-          </div>
-        </div>
-        <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Barba Estilizada</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
-        <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
-          <img src="https://i.postimg.cc/MpDBDk9Y/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 5">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
-          </div>
-        </div>
-        <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Urbano</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
-        <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
-          <img src="https://i.postimg.cc/MTkzfH1r/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 6">
-          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
-          </div>
-        </div>
-        <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Corte Premium</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Lightbox -->
-    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
-      <button class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
-      <img src="" alt="Lightbox Image" class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain">
-      <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 md:gap-8">
-        <button id="prev-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors">
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button id="next-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors">
-          <i class="fas fa-chevron-right"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Services Section -->
-<section id="servicios" class="py-12 md:py-20 bg-[#121212] section-padding">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12 md:mb-16 fade-in">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestros <span class="text-[#c59d5f]">Servicios</span></h2>
-      <div class="section-divider"></div>
-      <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
-        Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
-      </p>
+  <section id="servicios" class="py-12 md:py-20 bg-[#121212] section-padding">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-12 md:mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestros <span class="text-[#c59d5f]">Servicios</span></h2>
+        <div class="section-divider"></div>
+        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
+          Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 service-grid">
+        
+        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://i.postimg.cc/yxQy6kbw/image.png" alt="Corte Clásico" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Clásico</h3>
+            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte tradicional con estilo atemporal</p>
+            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€15</div>
+          </div>
+        </div>
+
+        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://citas.hairspremium.com/wp-content/uploads/2021/09/corte-de-cabello-tradicional.jpg" alt="Corte Premium" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Premium</h3>
+            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, lavado y peinado premium</p>
+            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
+          </div>
+        </div>
+
+        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://i.postimg.cc/9F9h7ZWt/image.png" alt="Corte Niño" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Fakes</h3>
+            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Para jóvenes</p>
+            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
+          </div>
+        </div>
+
+        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://i.postimg.cc/76SRLM3X/image.png" alt="Ondulado de Cabello" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Ondulado de Cabello</h3>
+            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Con técnica profesional y productos de styling</p>
+            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€18</div>
+          </div>
+        </div>
+
+        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://www.blog.cazcarra.com/wp-content/uploads/2017/02/tijeras.jpg" alt="Arreglo de Barba" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Arreglo de Barba</h3>
+            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Recorte y perfilado de barba</p>
+            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€12</div>
+          </div>
+        </div>
+
+        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="https://i.postimg.cc/W1S06Dny/image.png" alt="Paquete Completo" class="w-full h-full object-cover">
+          </div>
+          <div class="p-4 md:p-6">
+            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Paquete Completo</h3>
+            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, barba y tratamiento facial</p>
+            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€35</div>
+          </div>
+        </div>
+
+      </div>
     </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 service-grid">
-      
-      <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://i.postimg.cc/yxQy6kbw/image.png" alt="Corte Clásico" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Clásico</h3>
-          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte tradicional con estilo atemporal</p>
-          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€15</div>
-        </div>
-      </div>
-
-      <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://citas.hairspremium.com/wp-content/uploads/2021/09/corte-de-cabello-tradicional.jpg" alt="Corte Premium" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Premium</h3>
-          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, lavado y peinado premium</p>
-          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
-        </div>
-      </div>
-
-      <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://i.postimg.cc/9F9h7ZWt/image.png" alt="Corte Niño" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Fakes</h3>
-          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Para jóvenes</p>
-          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
-        </div>
-      </div>
-
-      <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://i.postimg.cc/76SRLM3X/image.png" alt="Ondulado de Cabello" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Ondulado de Cabello</h3>
-          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Con técnica profesional y productos de styling</p>
-          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€18</div>
-        </div>
-      </div>
-
-      <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://www.blog.cazcarra.com/wp-content/uploads/2017/02/tijeras.jpg" alt="Arreglo de Barba" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Arreglo de Barba</h3>
-          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Recorte y perfilado de barba</p>
-          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€12</div>
-        </div>
-      </div>
-
-      <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="https://i.postimg.cc/W1S06Dny/image.png" alt="Paquete Completo" class="w-full h-full object-cover">
-        </div>
-        <div class="p-4 md:p-6">
-          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Paquete Completo</h3>
-          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, barba y tratamiento facial</p>
-          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€35</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Team Section -->
   <section id="equipo" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
@@ -1309,7 +1315,7 @@
   </div>
   
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-  <script id="app-script">
+  <script>
     document.addEventListener('DOMContentLoaded', function() {
       // Gallery Images
       const galleryImages = [
@@ -1392,32 +1398,55 @@
         document.getElementById('google-map').src = settings.location.mapUrl;
       }
       
-      // Mobile menu functionality
+      // Mobile menu functionality - CORREGIDA
       function setupMobileMenu() {
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
         const mobileMenu = document.getElementById('mobile-menu');
         const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
-        const mobileMenuLinks = mobileMenu.querySelectorAll('a');
         
-        menuBtn.addEventListener('click', function() {
+        // Verificar que los elementos existen
+        if (!menuBtn || !closeMenuBtn || !mobileMenu || !mobileMenuOverlay) {
+          console.error('No se encontraron todos los elementos del menú móvil');
+          return;
+        }
+        
+        // Función para abrir el menú
+        function openMenu() {
           mobileMenu.classList.add('active');
           mobileMenuOverlay.classList.add('active');
           document.body.style.overflow = 'hidden';
-        });
+        }
         
+        // Función para cerrar el menú
         function closeMenu() {
           mobileMenu.classList.remove('active');
           mobileMenuOverlay.classList.remove('active');
           document.body.style.overflow = 'auto';
         }
         
-        closeMenuBtn.addEventListener('click', closeMenu);
-        mobileMenuOverlay.addEventListener('click', closeMenu);
-        
-        mobileMenuLinks.forEach(link => {
-          link.addEventListener('click', closeMenu);
-        });
+        // Solo configurar eventos en móvil
+        if (window.innerWidth <= 768) {
+          menuBtn.addEventListener('click', openMenu);
+          closeMenuBtn.addEventListener('click', closeMenu);
+          mobileMenuOverlay.addEventListener('click', closeMenu);
+          
+          // Cerrar menú al hacer clic en enlaces
+          const mobileMenuLinks = mobileMenu.querySelectorAll('a');
+          mobileMenuLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
+          });
+          
+          // Cerrar con Escape
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+              closeMenu();
+            }
+          });
+        } else {
+          // En desktop, remover cualquier clase active
+          closeMenu();
+        }
       }
       
       // Navigation active state based on scroll position
@@ -1703,6 +1732,11 @@
       setupScrollToTop();
       setupSmoothScroll();
       initSwiper();
+
+      // Re-inicializar el menú móvil si se cambia el tamaño de la ventana
+      window.addEventListener('resize', function() {
+        setupMobileMenu();
+      });
     });
   </script>
 </body>
