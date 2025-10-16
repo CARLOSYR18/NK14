@@ -536,6 +536,62 @@
         opacity: 1;
         visibility: visible;
       }
+      
+      /* Correcciones para móviles */
+      .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+      }
+      
+      .hero-text {
+        font-size: 2.5rem !important;
+        line-height: 1.2;
+      }
+      
+      .hero-subtext {
+        font-size: 1.1rem !important;
+      }
+      
+      .section-padding {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+      
+      .gallery-grid {
+        grid-template-columns: 1fr !important;
+        gap: 1rem;
+      }
+      
+      .service-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr !important;
+      }
+      
+      .testimonial-card {
+        padding: 1.5rem !important;
+      }
+      
+      .booking-form {
+        padding: 1.5rem !important;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .hero-text {
+        font-size: 2rem !important;
+      }
+      
+      .section-title {
+        font-size: 1.75rem !important;
+      }
     }
   </style>
 </head>
@@ -544,54 +600,65 @@
   <header class="fixed top-0 left-0 w-full bg-black bg-opacity-90 z-50 shadow-lg">
     <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
       <div class="flex items-center">
-        <h1 class="text-3xl md:text-4xl logo text-white m-0">
+        <h1 class="text-2xl md:text-4xl logo text-white m-0">
           <span class="text-[#c59d5f]">ELITE</span>CUTS
         </h1>
       </div>
       
-       <nav class="nav-links">
-        <a href="#home" class="mx-4 text-white hover:text-secondary-color transition-colors">Inicio</a>
-        <a href="#gallery" class="mx-4 text-white hover:text-secondary-color transition-colors">Galería</a>
-        <a href="#services" class="mx-4 text-white hover:text-secondary-color transition-colors">Servicios</a>
-        <a href="#team" class="mx-4 text-white hover:text-secondary-color transition-colors">Equipo</a>
-        <a href="#testimonials" class="mx-4 text-white hover:text-secondary-color transition-colors">Testimonios</a>
-        <a href="#location" class="mx-4 text-white hover:text-secondary-color transition-colors">Ubicación</a>
-        <a href="#hours" class="mx-4 text-white hover:text-secondary-color transition-colors">Horarios</a>
-        <a href="#contact" class="mx-4 text-white hover:text-secondary-color transition-colors">Contacto</a>
-      </nav>
-    </div>
-  </header>
+      <!-- Menú de escritorio -->
+      <div class="hidden md:flex nav-links">
+        <a href="#inicio" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Inicio</a>
+        <a href="#galeria" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Galería</a>
+        <a href="#servicios" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Servicios</a>
+        <a href="#equipo" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Equipo</a>
+        <a href="#testimonios" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Testimonios</a>
+        <a href="#ubicacion" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Ubicación</a>
+        <a href="#reservar" class="mx-4 text-white hover:text-[#c59d5f] transition-colors nav-link">Reservar</a>
+      </div>
+      
+      <!-- Botón de menú móvil -->
       <div class="md:hidden flex items-center">
         <button id="menu-btn" class="text-white text-2xl focus:outline-none">
           <i class="fas fa-bars"></i>
         </button>
       </div>
-      
-      <div id="mobile-menu" class="nav-menu">
-        <button id="close-menu" class="absolute top-4 right-4 text-white text-xl">
-          <i class="fas fa-times"></i>
-        </button>
-        
-      
-      <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
     </nav>
+    
+    <!-- Menú móvil -->
+    <div id="mobile-menu" class="nav-menu">
+      <button id="close-menu" class="absolute top-4 right-4 text-white text-xl">
+        <i class="fas fa-times"></i>
+      </button>
+      
+      <div class="flex flex-col space-y-6 mt-8">
+        <a href="#inicio" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Inicio</a>
+        <a href="#galeria" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Galería</a>
+        <a href="#servicios" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Servicios</a>
+        <a href="#equipo" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Equipo</a>
+        <a href="#testimonios" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Testimonios</a>
+        <a href="#ubicacion" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Ubicación</a>
+        <a href="#reservar" class="text-white hover:text-[#c59d5f] transition-colors text-lg">Reservar</a>
+      </div>
+    </div>
+    
+    <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
   </header>
 
   <!-- Hero Section -->
-  <section id="inicio" class="h-screen bg-cover bg-center flex items-center justify-center relative" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('');">
+  <section id="inicio" class="h-screen bg-cover bg-center flex items-center justify-center relative pt-16" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://cdn.pixabay.com/photo/2016/11/21/15/46/barber-1846161_1280.jpg');">
     <div class="absolute inset-0 bg-gradient-to-b from-black/70 to-transparent opacity-70"></div>
     <div class="container mx-auto px-4 text-center relative z-10">
-      <h1 class="text-5xl md:text-7xl font-bold mb-4 hero-text fade-in">
-        <span class="text-[#c59d5f]">HK74</span>BARBER SALÓN
+      <h1 class="text-4xl md:text-7xl font-bold mb-4 hero-text fade-in">
+        <span class="text-[#c59d5f]">ELITE</span>CUTS
       </h1>
-      <p class="text-xl md:text-2xl mb-8 hero-text max-w-2xl mx-auto fade-in fade-in-delay-1">
+      <p class="text-lg md:text-2xl mb-8 hero-text max-w-2xl mx-auto fade-in fade-in-delay-1 hero-subtext">
         Barbería Profesional donde el estilo se encuentra con la tradición
       </p>
       <div class="flex flex-col md:flex-row justify-center gap-4 fade-in fade-in-delay-2">
-        <a href="#servicios" class="btn-primary px-8 py-3 rounded-md">
+        <a href="#servicios" class="btn-primary px-6 py-3 md:px-8 md:py-3 rounded-md text-sm md:text-base">
           Nuestros Servicios
         </a>
-        <a href="#reservar" class="border-2 border-[#c59d5f] text-[#c59d5f] px-8 py-3 rounded-md hover:bg-[#c59d5f] hover:text-black transition-all uppercase font-bold">
+        <a href="#reservar" class="border-2 border-[#c59d5f] text-[#c59d5f] px-6 py-3 md:px-8 md:py-3 rounded-md hover:bg-[#c59d5f] hover:text-black transition-all uppercase font-bold text-sm md:text-base">
           Reservar Ahora
         </a>
       </div>
@@ -604,26 +671,26 @@
   </section>
 
  <!-- Gallery Section -->
-<section id="galeria" class="py-20 bg-[#0a0a0a]">
+<section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16 fade-in">
-      <h2 class="text-4xl font-bold mb-4">Galería de <span class="text-[#c59d5f]">Cortes</span></h2>
+    <div class="text-center mb-12 md:mb-16 fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Galería de <span class="text-[#c59d5f]">Cortes</span></h2>
       <div class="section-divider mx-auto w-16 h-1 bg-[#c59d5f] mb-4"></div>
-      <p class="mt-4 text-gray-300 max-w-2xl mx-auto">
+      <p class="mt-4 text-gray-300 max-w-2xl mx-auto px-4">
         Explora nuestra colección de los mejores estilos y cortes realizados por nuestros barberos expertos
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 gallery-grid">
       <div class="gallery-card fade-in border border-[#c59d5f] rounded-lg overflow-hidden bg-[#1a1a1a] flex flex-col h-full">
         <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
           <img src="https://i.postimg.cc/NM1tWgmn/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 1">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-3xl"></i>
+            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
           </div>
         </div>
         <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Agrega tu texto aquí</p>
+          <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Clásico</p>
         </div>
       </div>
 
@@ -631,11 +698,11 @@
         <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
           <img src="https://i.postimg.cc/9Q4v6mj0/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 2">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-3xl"></i>
+            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
           </div>
         </div>
         <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Agrega tu texto aquí</p>
+          <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Moderno</p>
         </div>
       </div>
 
@@ -643,11 +710,11 @@
         <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
           <img src="https://i.postimg.cc/FKVGq81G/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 3">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-3xl"></i>
+            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
           </div>
         </div>
         <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Agrega tu texto aquí</p>
+          <p class="text-[#c59d5f] text-center text-sm font-bold">Fade Perfecto</p>
         </div>
       </div>
 
@@ -655,11 +722,11 @@
         <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
           <img src="https://i.postimg.cc/XJh5DkK5/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 4">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-3xl"></i>
+            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
           </div>
         </div>
         <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Agrega tu texto aquí</p>
+          <p class="text-[#c59d5f] text-center text-sm font-bold">Barba Estilizada</p>
         </div>
       </div>
 
@@ -667,11 +734,11 @@
         <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
           <img src="https://i.postimg.cc/MpDBDk9Y/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 5">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-3xl"></i>
+            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
           </div>
         </div>
         <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Agrega tu texto aquí</p>
+          <p class="text-[#c59d5f] text-center text-sm font-bold">Estilo Urbano</p>
         </div>
       </div>
 
@@ -679,24 +746,24 @@
         <div class="gallery-item relative group cursor-pointer overflow-hidden rounded-lg flex-grow">
           <img src="https://i.postimg.cc/MTkzfH1r/image.png" class="w-full h-full max-h-[500px] object-cover transition-transform duration-500 group-hover:scale-105" alt="Corte 6">
           <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-            <i class="fas fa-search-plus text-white text-3xl"></i>
+            <i class="fas fa-search-plus text-white text-2xl md:text-3xl"></i>
           </div>
         </div>
         <div class="bg-[#0a0a0a] py-3 px-3 border-t border-[#c59d5f]">
-          <p class="text-[#c59d5f] text-center text-sm font-bold">Agrega tu texto aquí</p>
+          <p class="text-[#c59d5f] text-center text-sm font-bold">Corte Premium</p>
         </div>
       </div>
     </div>
 
     <!-- Lightbox -->
-    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center">
-      <button class="close-lightbox absolute top-8 right-8 text-white text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
-      <img src="" alt="Lightbox Image" class="lightbox-img max-w-4xl max-h-[80vh] object-contain">
-      <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex gap-8">
-        <button id="prev-btn" class="lightbox-control text-white text-2xl hover:text-[#c59d5f] transition-colors">
+    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+      <button class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
+      <img src="" alt="Lightbox Image" class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain">
+      <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 md:gap-8">
+        <button id="prev-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors">
           <i class="fas fa-chevron-left"></i>
         </button>
-        <button id="next-btn" class="lightbox-control text-white text-2xl hover:text-[#c59d5f] transition-colors">
+        <button id="next-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors">
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
@@ -704,94 +771,27 @@
   </div>
 </section>
 
-<style>
-  .gallery-item img {
-    transition: transform 0.5s ease, filter 0.3s ease;
-  }
-
-  .gallery-item:hover img {
-    filter: brightness(0.8);
-    transform: scale(1.05);
-  }
-
-  #lightbox.active {
-    display: flex !important;
-  }
-</style>
-
-<script>
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.querySelector('.lightbox-img');
-  const closeBtn = document.querySelector('.close-lightbox');
-  const prevBtn = document.getElementById('prev-btn');
-  const nextBtn = document.getElementById('next-btn');
-  let currentIndex = 0;
-
-  galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => {
-      currentIndex = index;
-      const img = item.querySelector('img');
-      lightboxImg.src = img.src;
-      lightbox.classList.add('active');
-    });
-  });
-
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-  }
-
-  function showNext() {
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-    const img = galleryItems[currentIndex].querySelector('img');
-    lightboxImg.src = img.src;
-  }
-
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    const img = galleryItems[currentIndex].querySelector('img');
-    lightboxImg.src = img.src;
-  }
-
-  closeBtn.addEventListener('click', closeLightbox);
-  nextBtn.addEventListener('click', showNext);
-  prevBtn.addEventListener('click', showPrev);
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (lightbox.classList.contains('active')) {
-      if (e.key === 'ArrowRight') showNext();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'Escape') closeLightbox();
-    }
-  });
-</script>
-
-
   <!-- Services Section -->
-<section id="servicios" class="py-20 bg-[#121212]">
+<section id="servicios" class="py-12 md:py-20 bg-[#121212] section-padding">
   <div class="container mx-auto px-4">
-    <div class="text-center mb-16 fade-in">
-      <h2 class="text-4xl font-bold mb-4">Nuestros <span class="text-[#c59d5f]">Servicios</span></h2>
+    <div class="text-center mb-12 md:mb-16 fade-in">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestros <span class="text-[#c59d5f]">Servicios</span></h2>
       <div class="section-divider"></div>
-      <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+      <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
         Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 service-grid">
       
       <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
         <div class="aspect-[4/3] overflow-hidden">
           <img src="https://i.postimg.cc/yxQy6kbw/image.png" alt="Corte Clásico" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-center mb-2">Corte Clásico</h3>
-          <p class="text-gray-400 text-center mb-4">Corte tradicional con estilo atemporal</p>
-          <div class="text-center text-[#c59d5f] font-bold text-xl">€15</div>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Clásico</h3>
+          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte tradicional con estilo atemporal</p>
+          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€15</div>
         </div>
       </div>
 
@@ -799,10 +799,10 @@
         <div class="aspect-[4/3] overflow-hidden">
           <img src="https://citas.hairspremium.com/wp-content/uploads/2021/09/corte-de-cabello-tradicional.jpg" alt="Corte Premium" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-center mb-2">Corte Premium</h3>
-          <p class="text-gray-400 text-center mb-4">Corte, lavado y peinado premium</p>
-          <div class="text-center text-[#c59d5f] font-bold text-xl">€25</div>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Premium</h3>
+          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, lavado y peinado premium</p>
+          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
         </div>
       </div>
 
@@ -810,10 +810,10 @@
         <div class="aspect-[4/3] overflow-hidden">
           <img src="https://i.postimg.cc/9F9h7ZWt/image.png" alt="Corte Niño" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-center mb-2">Fakes</h3>
-          <p class="text-gray-400 text-center mb-4">Para jóvenes</p>
-          <div class="text-center text-[#c59d5f] font-bold text-xl">€25</div>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Fakes</h3>
+          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Para jóvenes</p>
+          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
         </div>
       </div>
 
@@ -821,10 +821,10 @@
         <div class="aspect-[4/3] overflow-hidden">
           <img src="https://i.postimg.cc/76SRLM3X/image.png" alt="Ondulado de Cabello" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-center mb-2">Ondulado de Cabello</h3>
-          <p class="text-gray-400 text-center mb-4">Con técnica profesional y productos de styling</p>
-          <div class="text-center text-[#c59d5f] font-bold text-xl">€18</div>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Ondulado de Cabello</h3>
+          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Con técnica profesional y productos de styling</p>
+          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€18</div>
         </div>
       </div>
 
@@ -832,10 +832,10 @@
         <div class="aspect-[4/3] overflow-hidden">
           <img src="https://www.blog.cazcarra.com/wp-content/uploads/2017/02/tijeras.jpg" alt="Arreglo de Barba" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-center mb-2">Arreglo de Barba</h3>
-          <p class="text-gray-400 text-center mb-4">Recorte y perfilado de barba</p>
-          <div class="text-center text-[#c59d5f] font-bold text-xl">€12</div>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Arreglo de Barba</h3>
+          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Recorte y perfilado de barba</p>
+          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€12</div>
         </div>
       </div>
 
@@ -843,10 +843,10 @@
         <div class="aspect-[4/3] overflow-hidden">
           <img src="https://i.postimg.cc/W1S06Dny/image.png" alt="Paquete Completo" class="w-full h-full object-cover">
         </div>
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-center mb-2">Paquete Completo</h3>
-          <p class="text-gray-400 text-center mb-4">Corte, barba y tratamiento facial</p>
-          <div class="text-center text-[#c59d5f] font-bold text-xl">€35</div>
+        <div class="p-4 md:p-6">
+          <h3 class="text-lg md:text-xl font-bold text-center mb-2">Paquete Completo</h3>
+          <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, barba y tratamiento facial</p>
+          <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€35</div>
         </div>
       </div>
 
@@ -855,24 +855,24 @@
 </section>
 
   <!-- Team Section -->
-  <section id="equipo" class="py-20 bg-[#0a0a0a]">
+  <section id="equipo" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-bold mb-4">Nuestro <span class="text-[#c59d5f]">Equipo</span></h2>
+      <div class="text-center mb-12 md:mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestro <span class="text-[#c59d5f]">Equipo</span></h2>
         <div class="section-divider"></div>
-        <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
           Conoce a nuestros barberos profesionales con años de experiencia y pasión por su trabajo
         </p>
       </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 team-grid">
         <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-64 relative">
+          <div class="h-48 md:h-64 relative">
             <img src="https://cdn.pixabay.com/photo/2017/08/12/18/31/male-2634974_1280.jpg" alt="Carlos Mendoza" class="w-full h-full object-cover">
           </div>
           <div class="team-info p-4 text-center">
-            <h3 class="text-xl font-bold">Carlos Mendoza</h3>
-            <p class="text-[#c59d5f]">Maestro Barbero</p>
+            <h3 class="text-lg md:text-xl font-bold">Carlos Mendoza</h3>
+            <p class="text-[#c59d5f] text-sm md:text-base">Maestro Barbero</p>
           </div>
           <div class="team-social flex justify-center space-x-3">
             <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
@@ -888,12 +888,12 @@
         </div>
         
         <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-64 relative">
+          <div class="h-48 md:h-64 relative">
             <img src="https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_1280.jpg" alt="Laura Guzmán" class="w-full h-full object-cover">
           </div>
           <div class="team-info p-4 text-center">
-            <h3 class="text-xl font-bold">Laura Guzmán</h3>
-            <p class="text-[#c59d5f]">Estilista Senior</p>
+            <h3 class="text-lg md:text-xl font-bold">Laura Guzmán</h3>
+            <p class="text-[#c59d5f] text-sm md:text-base">Estilista Senior</p>
           </div>
           <div class="team-social flex justify-center space-x-3">
             <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
@@ -909,12 +909,12 @@
         </div>
         
         <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-64 relative">
+          <div class="h-48 md:h-64 relative">
             <img src="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_1280.jpg" alt="Diego Sánchez" class="w-full h-full object-cover">
           </div>
           <div class="team-info p-4 text-center">
-            <h3 class="text-xl font-bold">Diego Sánchez</h3>
-            <p class="text-[#c59d5f]">Especialista en Barbas</p>
+            <h3 class="text-lg md:text-xl font-bold">Diego Sánchez</h3>
+            <p class="text-[#c59d5f] text-sm md:text-base">Especialista en Barbas</p>
           </div>
           <div class="team-social flex justify-center space-x-3">
             <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
@@ -930,12 +930,12 @@
         </div>
         
         <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-64 relative">
+          <div class="h-48 md:h-64 relative">
             <img src="https://cdn.pixabay.com/photo/2018/07/25/14/29/man-3560661_1280.jpg" alt="Martín Rodríguez" class="w-full h-full object-cover">
           </div>
           <div class="team-info p-4 text-center">
-            <h3 class="text-xl font-bold">Martín Rodríguez</h3>
-            <p class="text-[#c59d5f]">Barbero Junior</p>
+            <h3 class="text-lg md:text-xl font-bold">Martín Rodríguez</h3>
+            <p class="text-[#c59d5f] text-sm md:text-base">Barbero Junior</p>
           </div>
           <div class="team-social flex justify-center space-x-3">
             <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
@@ -954,17 +954,17 @@
   </section>
 
   <!-- Booking Section -->
-  <section id="reservar" class="py-20 bg-cover bg-fixed bg-center" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://cdn.pixabay.com/photo/2016/11/19/13/57/beauty-salon-1839410_1280.jpg');">
+  <section id="reservar" class="py-12 md:py-20 bg-cover bg-fixed bg-center section-padding" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://cdn.pixabay.com/photo/2016/11/19/13/57/beauty-salon-1839410_1280.jpg');">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-bold mb-4">Reserva tu <span class="text-[#c59d5f]">Cita</span></h2>
+      <div class="text-center mb-12 md:mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Reserva tu <span class="text-[#c59d5f]">Cita</span></h2>
         <div class="section-divider"></div>
-        <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
           Reserva tu próxima cita en pocos minutos y disfruta de nuestros servicios profesionales
         </p>
       </div>
       
-      <div class="max-w-xl mx-auto metal-card p-8 rounded-lg fade-in">
+      <div class="max-w-xl mx-auto metal-card p-6 md:p-8 rounded-lg fade-in booking-form">
         <form id="booking-form">
           <div class="mb-4">
             <label for="name" class="block text-sm font-medium mb-1 text-gray-300">Nombre Completo</label>
@@ -1017,41 +1017,41 @@
           </div>
           
           <div class="text-center">
-            <button type="submit" id="submit-booking" class="btn-primary px-8 py-3 rounded-md w-full md:w-auto">
+            <button type="submit" id="submit-booking" class="btn-primary px-6 py-3 md:px-8 md:py-3 rounded-md w-full md:w-auto text-sm md:text-base">
               Reservar Ahora
             </button>
           </div>
         </form>
         
         <!-- Confirmation Message (Hidden by default) -->
-        <div id="booking-confirmation" class="text-center py-8 hidden">
+        <div id="booking-confirmation" class="text-center py-6 md:py-8 hidden">
           <div class="success-checkmark">
             <div class="check-icon">
               <span class="icon-line line-tip"></span>
               <span class="icon-line line-long"></span>
             </div>
           </div>
-          <h3 class="text-2xl font-bold mb-2">¡Reserva Confirmada!</h3>
-          <p class="text-gray-300">Gracias por tu reserva. Te hemos enviado un correo electrónico con los detalles.</p>
-          <button id="new-booking" class="mt-4 text-[#c59d5f] underline">Realizar otra reserva</button>
+          <h3 class="text-xl md:text-2xl font-bold mb-2">¡Reserva Confirmada!</h3>
+          <p class="text-gray-300 text-sm md:text-base">Gracias por tu reserva. Te hemos enviado un correo electrónico con los detalles.</p>
+          <button id="new-booking" class="mt-4 text-[#c59d5f] underline text-sm md:text-base">Realizar otra reserva</button>
         </div>
         
         <!-- Loading Spinner (Hidden by default) -->
-        <div id="loading-spinner" class="text-center py-8 hidden">
+        <div id="loading-spinner" class="text-center py-6 md:py-8 hidden">
           <div class="spinner mx-auto"></div>
-          <p class="mt-4 text-gray-300">Procesando tu reserva...</p>
+          <p class="mt-4 text-gray-300 text-sm md:text-base">Procesando tu reserva...</p>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Testimonials -->
-  <section id="testimonios" class="py-20 bg-[#121212]">
+  <section id="testimonios" class="py-12 md:py-20 bg-[#121212] section-padding">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-bold mb-4">Lo Que Dicen Nuestros <span class="text-[#c59d5f]">Clientes</span></h2>
+      <div class="text-center mb-12 md:mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Lo Que Dicen Nuestros <span class="text-[#c59d5f]">Clientes</span></h2>
         <div class="section-divider"></div>
-        <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
           La satisfacción de nuestros clientes es nuestra mejor recompensa
         </p>
       </div>
@@ -1059,13 +1059,13 @@
       <div class="fade-in">
         <div class="swiper testimonials-swiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide p-4">
-              <div class="testimonial-card p-8 rounded-lg h-full">
+            <div class="swiper-slide p-2 md:p-4">
+              <div class="testimonial-card p-4 md:p-8 rounded-lg h-full">
                 <div class="flex items-center mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Carlos Rodríguez" class="w-16 h-16 rounded-full object-cover">
-                  <div class="ml-4">
-                    <h4 class="font-bold text-lg">Carlos Rodríguez</h4>
-                    <div class="text-[#c59d5f]">
+                  <img src="https://cdn.pixabay.com/photo/2016/11/21/12/42/beard-1845166_1280.jpg" alt="Carlos Rodríguez" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                  <div class="ml-3 md:ml-4">
+                    <h4 class="font-bold text-base md:text-lg">Carlos Rodríguez</h4>
+                    <div class="text-[#c59d5f] text-sm md:text-base">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -1074,19 +1074,19 @@
                     </div>
                   </div>
                 </div>
-                <p class="text-gray-300 italic">
+                <p class="text-gray-300 italic text-sm md:text-base">
                   "La mejor barbería en la que he estado. Profesionales, amables y el resultado siempre excepcional. No busco otro lugar desde hace más de un año."
                 </p>
               </div>
             </div>
             
-            <div class="swiper-slide p-4">
-              <div class="testimonial-card p-8 rounded-lg h-full">
+            <div class="swiper-slide p-2 md:p-4">
+              <div class="testimonial-card p-4 md:p-8 rounded-lg h-full">
                 <div class="flex items-center mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2017/11/02/14/26/model-2911330_1280.jpg" alt="Alejandro Méndez" class="w-16 h-16 rounded-full object-cover">
-                  <div class="ml-4">
-                    <h4 class="font-bold text-lg">Alejandro Méndez</h4>
-                    <div class="text-[#c59d5f]">
+                  <img src="https://cdn.pixabay.com/photo/2017/11/02/14/26/model-2911330_1280.jpg" alt="Alejandro Méndez" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                  <div class="ml-3 md:ml-4">
+                    <h4 class="font-bold text-base md:text-lg">Alejandro Méndez</h4>
+                    <div class="text-[#c59d5f] text-sm md:text-base">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -1095,19 +1095,19 @@
                     </div>
                   </div>
                 </div>
-                <p class="text-gray-300 italic">
+                <p class="text-gray-300 italic text-sm md:text-base">
                   "Increíble atención al cliente y el corte de pelo exactamente como lo pedí. El ambiente es genial y los barberos muy profesionales."
                 </p>
               </div>
             </div>
             
-            <div class="swiper-slide p-4">
-              <div class="testimonial-card p-8 rounded-lg h-full">
+            <div class="swiper-slide p-2 md:p-4">
+              <div class="testimonial-card p-4 md:p-8 rounded-lg h-full">
                 <div class="flex items-center mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2016/11/29/01/34/man-1866574_1280.jpg" alt="Martín González" class="w-16 h-16 rounded-full object-cover">
-                  <div class="ml-4">
-                    <h4 class="font-bold text-lg">Martín González</h4>
-                    <div class="text-[#c59d5f]">
+                  <img src="https://cdn.pixabay.com/photo/2016/11/29/01/34/man-1866574_1280.jpg" alt="Martín González" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                  <div class="ml-3 md:ml-4">
+                    <h4 class="font-bold text-base md:text-lg">Martín González</h4>
+                    <div class="text-[#c59d5f] text-sm md:text-base">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -1116,19 +1116,19 @@
                     </div>
                   </div>
                 </div>
-                <p class="text-gray-300 italic">
+                <p class="text-gray-300 italic text-sm md:text-base">
                   "He probado muchas barberías pero ninguna como EliteCuts. El afeitado con navaja tradicional es una experiencia que todo hombre debería probar."
                 </p>
               </div>
             </div>
             
-            <div class="swiper-slide p-4">
-              <div class="testimonial-card p-8 rounded-lg h-full">
+            <div class="swiper-slide p-2 md:p-4">
+              <div class="testimonial-card p-4 md:p-8 rounded-lg h-full">
                 <div class="flex items-center mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2015/03/03/18/58/person-657869_1280.jpg" alt="Roberto Sánchez" class="w-16 h-16 rounded-full object-cover">
-                  <div class="ml-4">
-                    <h4 class="font-bold text-lg">Roberto Sánchez</h4>
-                    <div class="text-[#c59d5f]">
+                  <img src="https://cdn.pixabay.com/photo/2015/03/03/18/58/person-657869_1280.jpg" alt="Roberto Sánchez" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                  <div class="ml-3 md:ml-4">
+                    <h4 class="font-bold text-base md:text-lg">Roberto Sánchez</h4>
+                    <div class="text-[#c59d5f] text-sm md:text-base">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -1137,19 +1137,19 @@
                     </div>
                   </div>
                 </div>
-                <p class="text-gray-300 italic">
+                <p class="text-gray-300 italic text-sm md:text-base">
                   "Mi barbería favorita de Madrid. El ambiente es excelente y el personal muy profesional. Recomendado 100% si buscas calidad."
                 </p>
               </div>
             </div>
             
-            <div class="swiper-slide p-4">
-              <div class="testimonial-card p-8 rounded-lg h-full">
+            <div class="swiper-slide p-2 md:p-4">
+              <div class="testimonial-card p-4 md:p-8 rounded-lg h-full">
                 <div class="flex items-center mb-4">
-                  <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg" alt="David López" class="w-16 h-16 rounded-full object-cover">
-                  <div class="ml-4">
-                    <h4 class="font-bold text-lg">David López</h4>
-                    <div class="text-[#c59d5f]">
+                  <img src="https://cdn.pixabay.com/photo/2015/01/08/18/29/entrepreneur-593358_1280.jpg" alt="David López" class="w-12 h-12 md:w-16 md:h-16 rounded-full object-cover">
+                  <div class="ml-3 md:ml-4">
+                    <h4 class="font-bold text-base md:text-lg">David López</h4>
+                    <div class="text-[#c59d5f] text-sm md:text-base">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -1158,39 +1158,39 @@
                     </div>
                   </div>
                 </div>
-                <p class="text-gray-300 italic">
+                <p class="text-gray-300 italic text-sm md:text-base">
                   "Llevo yendo 6 meses y siempre salgo satisfecho. El trato es personalizado y los precios muy razonables para la calidad que ofrecen."
                 </p>
               </div>
             </div>
           </div>
           
-          <div class="swiper-pagination mt-8"></div>
+          <div class="swiper-pagination mt-6 md:mt-8"></div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- Location -->
-  <section id="ubicacion" class="py-20 bg-[#0a0a0a]">
+  <section id="ubicacion" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-16 fade-in">
-        <h2 class="text-4xl font-bold mb-4">Nuestra <span class="text-[#c59d5f]">Ubicación</span></h2>
+      <div class="text-center mb-12 md:mb-16 fade-in">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestra <span class="text-[#c59d5f]">Ubicación</span></h2>
         <div class="section-divider"></div>
-        <p class="mt-4 text-gray-300 max-w-xl mx-auto">
+        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
           Visítanos en nuestro local y disfruta de la mejor experiencia en barbería
         </p>
       </div>
       
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
         <div class="fade-in">
-          <div class="metal-card rounded-lg overflow-hidden h-96">
+          <div class="metal-card rounded-lg overflow-hidden h-64 md:h-96">
             <iframe id="google-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.7899378213708!2d-3.703491284447528!3d40.41667097936461!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd42287d6da3df33%3A0x6a6fff70108e0ab2!2sPuerta%20del%20Sol%2C%20Madrid!5e0!3m2!1ses!2ses!4v1654234234123!5m2!1ses!2ses" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
         </div>
         
-        <div class="metal-card p-8 rounded-lg fade-in">
-          <h3 class="text-2xl font-bold mb-6 text-[#c59d5f]">Horario de Apertura</h3>
+        <div class="metal-card p-6 md:p-8 rounded-lg fade-in">
+          <h3 class="text-xl md:text-2xl font-bold mb-4 md:mb-6 text-[#c59d5f]">Horario de Apertura</h3>
           
           <ul class="hours-list">
             <li class="flex justify-between items-center">
@@ -1223,34 +1223,34 @@
             </li>
           </ul>
           
-          <div class="mt-8">
-            <h4 class="text-xl font-bold mb-4">Contacto</h4>
-            <p id="address-display" class="flex items-center mb-3">
+          <div class="mt-6 md:mt-8">
+            <h4 class="text-lg md:text-xl font-bold mb-3 md:mb-4">Contacto</h4>
+            <p id="address-display" class="flex items-center mb-3 text-sm md:text-base">
               <i class="fas fa-map-marker-alt text-[#c59d5f] mr-3"></i>
               <span>Calle Gran Vía 123, Madrid, España</span>
             </p>
-            <p id="phone-display" class="flex items-center mb-3">
+            <p id="phone-display" class="flex items-center mb-3 text-sm md:text-base">
               <i class="fas fa-phone text-[#c59d5f] mr-3"></i>
               <span>+34 912 345 678</span>
             </p>
-            <p id="email-display" class="flex items-center">
+            <p id="email-display" class="flex items-center text-sm md:text-base">
               <i class="fas fa-envelope text-[#c59d5f] mr-3"></i>
               <span>info@elitecuts.com</span>
             </p>
           </div>
           
-          <div class="mt-8 flex space-x-4">
-            <a id="facebook-link" href="javascript:void(0)" class="social-icon bg-[#1877F2] hover:bg-opacity-80 text-white p-3 rounded-full transition-all">
-              <i class="fab fa-facebook-f"></i>
+          <div class="mt-6 md:mt-8 flex space-x-3 md:space-x-4 justify-center md:justify-start">
+            <a id="facebook-link" href="javascript:void(0)" class="social-icon bg-[#1877F2] hover:bg-opacity-80 text-white p-2 md:p-3 rounded-full transition-all">
+              <i class="fab fa-facebook-f text-sm md:text-base"></i>
             </a>
-            <a id="twitter-link" href="javascript:void(0)" class="social-icon bg-[#1DA1F2] hover:bg-opacity-80 text-white p-3 rounded-full transition-all">
-              <i class="fab fa-twitter"></i>
+            <a id="twitter-link" href="javascript:void(0)" class="social-icon bg-[#1DA1F2] hover:bg-opacity-80 text-white p-2 md:p-3 rounded-full transition-all">
+              <i class="fab fa-twitter text-sm md:text-base"></i>
             </a>
-            <a id="instagram-link" href="javascript:void(0)" class="social-icon bg-gradient-to-r from-[#5851DB] to-[#E1306C] hover:opacity-80 text-white p-3 rounded-full transition-all">
-              <i class="fab fa-instagram"></i>
+            <a id="instagram-link" href="javascript:void(0)" class="social-icon bg-gradient-to-r from-[#5851DB] to-[#E1306C] hover:opacity-80 text-white p-2 md:p-3 rounded-full transition-all">
+              <i class="fab fa-instagram text-sm md:text-base"></i>
             </a>
-            <a id="youtube-link" href="javascript:void(0)" class="social-icon bg-[#FF0000] hover:bg-opacity-80 text-white p-3 rounded-full transition-all">
-              <i class="fab fa-youtube"></i>
+            <a id="youtube-link" href="javascript:void(0)" class="social-icon bg-[#FF0000] hover:bg-opacity-80 text-white p-2 md:p-3 rounded-full transition-all">
+              <i class="fab fa-youtube text-sm md:text-base"></i>
             </a>
           </div>
         </div>
@@ -1259,20 +1259,20 @@
   </section>
 
   <!-- Footer -->
-  <footer class="bg-black py-8">
+  <footer class="bg-black py-6 md:py-8">
     <div class="container mx-auto px-4">
       <div class="flex flex-col md:flex-row justify-between items-center">
-        <div class="mb-6 md:mb-0">
-          <h1 class="text-2xl md:text-3xl logo text-white">
+        <div class="mb-4 md:mb-0">
+          <h1 class="text-xl md:text-3xl logo text-white">
             <span class="text-[#c59d5f]">ELITE</span>CUTS
           </h1>
         </div>
         
-        <div class="text-gray-400 text-center md:text-left mb-6 md:mb-0">
+        <div class="text-gray-400 text-center md:text-left mb-4 md:mb-0 text-sm md:text-base">
           <p>&copy; 2025 EliteCuts Barbería. Todos los derechos reservados.</p>
         </div>
         
-        <div class="flex space-x-4">
+        <div class="flex space-x-3 md:space-x-4">
           <a id="footer-facebook" href="javascript:void(0)" class="text-gray-400 hover:text-[#c59d5f] transition-colors">
             <i class="fab fa-facebook-f"></i>
           </a>
@@ -1288,17 +1288,17 @@
         </div>
       </div>
       
-      <div class="mt-8 pt-8 border-t border-gray-800 text-center">
-        <div class="flex flex-wrap justify-center gap-4 mb-4">
-          <a href="#inicio" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Inicio</a>
-          <a href="#galeria" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Galería</a>
-          <a href="#servicios" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Servicios</a>
-          <a href="#equipo" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Nuestro Equipo</a>
-          <a href="#reservar" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Reservar</a>
-          <a href="#testimonios" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Testimonios</a>
-          <a href="#ubicacion" class="text-gray-400 hover:text-[#c59d5f] transition-colors">Ubicación</a>
+      <div class="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-800 text-center">
+        <div class="flex flex-wrap justify-center gap-3 md:gap-4 mb-3 md:mb-4 footer-links">
+          <a href="#inicio" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Inicio</a>
+          <a href="#galeria" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Galería</a>
+          <a href="#servicios" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Servicios</a>
+          <a href="#equipo" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Nuestro Equipo</a>
+          <a href="#reservar" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Reservar</a>
+          <a href="#testimonios" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Testimonios</a>
+          <a href="#ubicacion" class="text-gray-400 hover:text-[#c59d5f] transition-colors text-sm">Ubicación</a>
         </div>
-        <p class="text-sm text-gray-500">Diseñado con <i class="fas fa-heart text-[#c59d5f]"></i> para los clientes más exigentes</p>
+        <p class="text-xs md:text-sm text-gray-500">Diseñado con <i class="fas fa-heart text-[#c59d5f]"></i> para los clientes más exigentes</p>
       </div>
     </div>
   </footer>
@@ -1314,40 +1314,28 @@
       // Gallery Images
       const galleryImages = [
         {
-          url: 'https://cdn.pixabay.com/photo/2016/11/21/15/46/barber-1846161_1280.jpg',
-          alt: 'Corte de pelo moderno'
+          url: 'https://i.postimg.cc/NM1tWgmn/image.png',
+          alt: 'Corte 1'
         },
         {
-          url: 'https://cdn.pixabay.com/photo/2014/01/17/14/53/shaving-246946_1280.jpg',
-          alt: 'Afeitado tradicional'
+          url: 'https://i.postimg.cc/9Q4v6mj0/image.png',
+          alt: 'Corte 2'
         },
         {
-          url: 'https://cdn.pixabay.com/photo/2016/11/18/14/30/man-1834831_1280.jpg',
-          alt: 'Corte con degradado'
+          url: 'https://i.postimg.cc/FKVGq81G/image.png',
+          alt: 'Corte 3'
         },
         {
-          url: 'https://cdn.pixabay.com/photo/2016/11/29/06/46/adult-1867889_1280.jpg',
-          alt: 'Arreglo de barba'
+          url: 'https://i.postimg.cc/XJh5DkK5/image.png',
+          alt: 'Corte 4'
         },
         {
-          url: 'https://cdn.pixabay.com/photo/2016/11/18/14/30/bearded-1834845_1280.jpg',
-          alt: 'Estilo completo'
+          url: 'https://i.postimg.cc/MpDBDk9Y/image.png',
+          alt: 'Corte 5'
         },
         {
-          url: 'https://cdn.pixabay.com/photo/2016/10/11/06/40/gentleman-1730742_1280.jpg',
-          alt: 'Peinado clásico'
-        },
-        {
-          url: 'https://cdn.pixabay.com/photo/2016/11/29/09/32/man-1868632_1280.jpg',
-          alt: 'Corte moderno con barba'
-        },
-        {
-          url: 'https://cdn.pixabay.com/photo/2016/11/19/13/08/fashion-1839005_1280.jpg',
-          alt: 'Estilo urbano'
-        },
-        {
-          url: 'https://cdn.pixabay.com/photo/2017/08/07/15/22/people-2604172_1280.jpg',
-          alt: 'Estilo clásico'
+          url: 'https://i.postimg.cc/MTkzfH1r/image.png',
+          alt: 'Corte 6'
         }
       ];
       
@@ -1475,12 +1463,12 @@
           const imgSrc = galleryImages[index].url;
           lightboxImg.src = imgSrc;
           lightboxImg.alt = galleryImages[index].alt;
-          lightbox.classList.add('active');
+          lightbox.classList.remove('hidden');
           document.body.style.overflow = 'hidden';
         }
         
         function closeLightboxFunc() {
-          lightbox.classList.remove('active');
+          lightbox.classList.add('hidden');
           document.body.style.overflow = 'auto';
         }
         
@@ -1496,9 +1484,8 @@
           lightboxImg.alt = galleryImages[currentImageIndex].alt;
         }
         
-        galleryItems.forEach(item => {
+        galleryItems.forEach((item, index) => {
           item.addEventListener('click', function() {
-            const index = parseInt(this.getAttribute('data-index'));
             openLightbox(index);
           });
         });
@@ -1516,7 +1503,7 @@
         
         // Keyboard navigation for lightbox
         document.addEventListener('keydown', function(e) {
-          if (!lightbox.classList.contains('active')) return;
+          if (lightbox.classList.contains('hidden')) return;
           
           if (e.key === 'Escape') {
             closeLightboxFunc();
@@ -1677,7 +1664,7 @@
       function initSwiper() {
         new Swiper('.testimonials-swiper', {
           slidesPerView: 1,
-          spaceBetween: 30,
+          spaceBetween: 10,
           loop: true,
           autoplay: {
             delay: 5000,
@@ -1688,11 +1675,17 @@
             clickable: true,
           },
           breakpoints: {
+            640: {
+              slidesPerView: 1,
+              spaceBetween: 20,
+            },
             768: {
               slidesPerView: 2,
+              spaceBetween: 30,
             },
             1024: {
               slidesPerView: 3,
+              spaceBetween: 30,
             },
           },
         });
