@@ -698,162 +698,105 @@
       </p>
     </div>
 
-    <!-- Filtros de Galería -->
     <div class="flex flex-wrap justify-center gap-4 mb-8 fade-in">
-      <button class="gallery-filter-btn active px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="all">
-        Todos
-      </button>
-      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="classic">
-        Clásicos
-      </button>
-      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="modern">
-        Modernos
-      </button>
-      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="fade">
-        Fades
-      </button>
+      <button class="gallery-filter-btn active px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="all">Todos</button>
+      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="classic">Clásicos</button>
+      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="modern">Modernos</button>
+      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="fade">Fades</button>
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 gallery-grid">
-      <!-- Item 1 - Estilo Clásico -->
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
+      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-2 border-white hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
         <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img
-            src="https://i.postimg.cc/NM1tWgmn/image.png"
-            class="gallery-image w-full h-full object-cover"
-            alt="Corte 1: Estilo Clásico"
-          />
+          <img src="https://i.postimg.cc/NM1tWgmn/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 1: Estilo Clásico"/>
           <div class="gallery-overlay">
             <span class="gallery-category">Clásico</span>
             <h3 class="gallery-title">Estilo Clásico</h3>
             <p class="gallery-description">Elegancia atemporal con líneas precisas y acabado impecable.</p>
           </div>
         </div>
-        <div class="relative bg-transparent py-3 px-4 border-t border-[#c59d5f]/20">
-          <p class="text-[#c59d5f] text-center text-lg font-extrabold tracking-wider">Estilo Clásico</p>
+        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Clásico</p>
         </div>
       </div>
 
-      <!-- Item 2 - Estilo Moderno -->
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
+      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-2 border-white hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
         <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img
-            src="https://i.postimg.cc/9Q4v6mj0/image.png"
-            class="gallery-image w-full h-full object-cover"
-            alt="Corte 2: Estilo Moderno"
-          />
+          <img src="https://i.postimg.cc/9Q4v6mj0/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 2: Estilo Moderno"/>
           <div class="gallery-overlay">
             <span class="gallery-category">Moderno</span>
             <h3 class="gallery-title">Estilo Moderno</h3>
             <p class="gallery-description">Tendencias actuales con un toque de personalidad única.</p>
           </div>
         </div>
-        <div class="relative bg-transparent py-3 px-4 border-t border-[#c59d5f]/20">
-          <p class="text-[#c59d5f] text-center text-lg font-extrabold tracking-wider">Estilo Moderno</p>
+        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Moderno</p>
         </div>
       </div>
 
-      <!-- Item 3 - Fade Perfecto -->
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="fade">
+      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-2 border-white hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="fade">
         <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img
-            src="https://i.postimg.cc/FKVGq81G/image.png"
-            class="gallery-image w-full h-full object-cover"
-            alt="Corte 3: Fade Perfecto"
-          />
+          <img src="https://i.postimg.cc/FKVGq81G/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 3: Fade Perfecto"/>
           <div class="gallery-overlay">
             <span class="gallery-category">Fade</span>
             <h3 class="gallery-title">Fade Perfecto</h3>
             <p class="gallery-description">Transiciones suaves y precisas que definen el estilo.</p>
           </div>
         </div>
-        <div class="relative bg-transparent py-3 px-4 border-t border-[#c59d5f]/20">
-          <p class="text-[#c59d5f] text-center text-lg font-extrabold tracking-wider">Fade Perfecto</p>
+        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Fade Perfecto</p>
         </div>
       </div>
 
-      <!-- Item 4 - Barba Estilizada -->
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
+      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-2 border-white hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
         <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img
-            src="https://i.postimg.cc/XJh5DkK5/image.png"
-            class="gallery-image w-full h-full object-cover"
-            alt="Corte 4: Barba Estilizada"
-          />
+          <img src="https://i.postimg.cc/XJh5DkK5/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 4: Barba Estilizada"/>
           <div class="gallery-overlay">
             <span class="gallery-category">Barba</span>
             <h3 class="gallery-title">Barba Estilizada</h3>
             <p class="gallery-description">Perfilado y cuidado meticuloso para una barba perfecta.</p>
           </div>
         </div>
-        <div class="relative bg-transparent py-3 px-4 border-t border-[#c59d5f]/20">
-          <p class="text-[#c59d5f] text-center text-lg font-extrabold tracking-wider">Barba Estilizada</p>
+        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Barba Estilizada</p>
         </div>
       </div>
 
-      <!-- Item 5 - Estilo Urbano -->
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
+      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-2 border-white hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
         <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img
-            src="https://i.postimg.cc/MpDBDk9Y/image.png"
-            class="gallery-image w-full h-full object-cover"
-            alt="Corte 5: Estilo Urbano"
-          />
+          <img src="https://i.postimg.cc/MpDBDk9Y/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 5: Estilo Urbano"/>
           <div class="gallery-overlay">
             <span class="gallery-category">Urbano</span>
             <h3 class="gallery-title">Estilo Urbano</h3>
             <p class="gallery-description">Influencias urbanas con un acabado profesional.</p>
           </div>
         </div>
-        <div class="relative bg-transparent py-3 px-4 border-t border-[#c59d5f]/20">
-          <p class="text-[#c59d5f] text-center text-lg font-extrabold tracking-wider">Estilo Urbano</p>
+        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Urbano</p>
         </div>
       </div>
 
-      <!-- Item 6 - Corte Premium -->
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
+      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-2 border-white hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
         <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img
-            src="https://i.postimg.cc/MTkzfH1r/image.png"
-            class="gallery-image w-full h-full object-cover"
-            alt="Corte 6: Corte Premium"
-          />
+          <img src="https://i.postimg.cc/MTkzfH1r/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 6: Corte Premium"/>
           <div class="gallery-overlay">
             <span class="gallery-category">Premium</span>
             <h3 class="gallery-title">Corte Premium</h3>
             <p class="gallery-description">Detalles premium para clientes que buscan lo mejor.</p>
           </div>
         </div>
-        <div class="relative bg-transparent py-3 px-4 border-t border-[#c59d5f]/20">
-          <p class="text-[#c59d5f] text-center text-lg font-extrabold tracking-wider">Corte Premium</p>
+        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Corte Premium</p>
         </div>
       </div>
     </div>
 
     <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
-      <button
-        class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors"
-      >
-        &times;
-      </button>
-      <img
-        src=""
-        alt="Lightbox Image"
-        class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain"
-      />
+      <button class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
+      <img src="" alt="Lightbox Image" class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain"/>
       <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 md:gap-8">
-        <button
-          id="prev-btn"
-          class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"
-        >
-          <i class="fas fa-chevron-left"></i>
-        </button>
-        <button
-          id="next-btn"
-          class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"
-        >
-          <i class="fas fa-chevron-right"></i>
-        </button>
+        <button id="prev-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"><i class="fas fa-chevron-left"></i></button>
+        <button id="next-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"><i class="fas fa-chevron-right"></i></button>
       </div>
     </div>
   </div>
@@ -898,36 +841,9 @@
     filter: brightness(0.5) contrast(1.1) saturate(0) grayscale(100%);
   }
   
-  .zoom-icon {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: rgba(197, 157, 95, 0.9);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    opacity: 0;
-    transform: scale(0.8);
-    transition: all 0.3s ease;
-    z-index: 10;
-    visibility: hidden;
-  }
-  
-  .gallery-item:hover .zoom-icon {
-    opacity: 1;
-    transform: scale(1);
-  }
-  
   .gallery-overlay {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    top: 0;
+    inset: 0;
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85));
     padding: 30px 20px;
     display: flex;
@@ -942,8 +858,8 @@
   }
   
   .gallery-item:hover .gallery-overlay {
-    transform: translateY(0);
     opacity: 1;
+    transform: translateY(0);
   }
   
   .gallery-category {
@@ -985,10 +901,11 @@
   
   .filter-inactive {
     filter: grayscale(100%);
-    opacity: 0.5;
+    opacity: 0.4;
+    pointer-events: none;
     transition: all 0.3s ease;
   }
-  
+
   @media (max-width: 768px) {
     .gallery-overlay {
       padding: 20px 15px 15px;
@@ -1001,47 +918,18 @@
     .gallery-description {
       font-size: 0.8rem;
     }
-    
-    .zoom-icon {
-      width: 35px;
-      height: 35px;
-    }
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     const galleryImages = [
-      {
-        url: 'https://i.postimg.cc/NM1tWgmn/image.png',
-        alt: 'Corte 1: Estilo Clásico',
-        category: 'classic'
-      },
-      {
-        url: 'https://i.postimg.cc/9Q4v6mj0/image.png',
-        alt: 'Corte 2: Estilo Moderno',
-        category: 'modern'
-      },
-      {
-        url: 'https://i.postimg.cc/FKVGq81G/image.png',
-        alt: 'Corte 3: Fade Perfecto',
-        category: 'fade'
-      },
-      {
-        url: 'https://i.postimg.cc/XJh5DkK5/image.png',
-        alt: 'Corte 4: Barba Estilizada',
-        category: 'classic'
-      },
-      {
-        url: 'https://i.postimg.cc/MpDBDk9Y/image.png',
-        alt: 'Corte 5: Estilo Urbano',
-        category: 'modern'
-      },
-      {
-        url: 'https://i.postimg.cc/MTkzfH1r/image.png',
-        alt: 'Corte 6: Corte Premium',
-        category: 'classic'
-      }
+      { url: 'https://i.postimg.cc/NM1tWgmn/image.png', alt: 'Corte 1: Estilo Clásico', category: 'classic' },
+      { url: 'https://i.postimg.cc/9Q4v6mj0/image.png', alt: 'Corte 2: Estilo Moderno', category: 'modern' },
+      { url: 'https://i.postimg.cc/FKVGq81G/image.png', alt: 'Corte 3: Fade Perfecto', category: 'fade' },
+      { url: 'https://i.postimg.cc/XJh5DkK5/image.png', alt: 'Corte 4: Barba Estilizada', category: 'classic' },
+      { url: 'https://i.postimg.cc/MpDBDk9Y/image.png', alt: 'Corte 5: Estilo Urbano', category: 'modern' },
+      { url: 'https://i.postimg.cc/MTkzfH1r/image.png', alt: 'Corte 6: Corte Premium', category: 'classic' }
     ];
     
     const filterButtons = document.querySelectorAll('.gallery-filter-btn');
@@ -1078,8 +966,7 @@
       
       function openLightbox(index) {
         currentImageIndex = index;
-        const imgSrc = galleryImages[index].url;
-        lightboxImg.src = imgSrc;
+        lightboxImg.src = galleryImages[index].url;
         lightboxImg.alt = galleryImages[index].alt;
         lightbox.classList.remove('hidden');
         document.body.style.overflow = 'hidden';
@@ -1113,21 +1000,14 @@
       nextBtn.addEventListener('click', showNextImage);
       
       lightbox.addEventListener('click', function(e) {
-        if(e.target === lightbox) {
-          closeLightboxFunc();
-        }
+        if(e.target === lightbox) closeLightboxFunc();
       });
       
       document.addEventListener('keydown', function(e) {
         if (lightbox.classList.contains('hidden')) return;
-        
-        if (e.key === 'Escape') {
-          closeLightboxFunc();
-        } else if (e.key === 'ArrowRight') {
-          showNextImage();
-        } else if (e.key === 'ArrowLeft') {
-          showPrevImage();
-        }
+        if (e.key === 'Escape') closeLightboxFunc();
+        else if (e.key === 'ArrowRight') showNextImage();
+        else if (e.key === 'ArrowLeft') showPrevImage();
       });
     }
     
