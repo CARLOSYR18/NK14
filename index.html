@@ -701,6 +701,7 @@
     <title>NK14 Barber Salón</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="theme-color" content="#000000">
     <style>
         /* Animación de entrada para los botones */
         @keyframes slideInUp {
@@ -789,6 +790,28 @@
         .hero-overlay {
             background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(220,20,60,0.1));
         }
+
+        .btn-container {
+            transform: translateY(-50%);
+        }
+
+        @media (max-width: 768px) {
+            .btn-container {
+                top: 55% !important;
+                width: 90% !important;
+                left: 50% !important;
+                transform: translateX(-50%) translateY(-50%) !important;
+            }
+        }
+
+        @media (min-width: 769px) {
+            .btn-container {
+                top: 62% !important;
+                width: auto !important;
+                left: 50% !important;
+                transform: translateX(-50%) translateY(-50%) !important;
+            }
+        }
     </style>
 </head>
 <body>
@@ -806,15 +829,15 @@
         <div class="absolute inset-0"></div>
 
         <!-- Contenedor de botones perfectamente centrado -->
-        <div class="container mx-auto px-4 text-center absolute z-10" style="top: 73%; transform: translateY(-50%);">
-            <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-8">
+        <div class="btn-container absolute z-10 left-1/2">
+            <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
                 <!-- Botón Servicios -->
-                <a href="#servicios" class="btn-primary btn-primary-modern text-white font-bold px-8 py-4 md:px-10 md:py-4 rounded-lg text-sm md:text-base transition-all duration-300 shadow-lg">
+                <a href="#servicios" class="btn-primary btn-primary-modern text-white font-bold px-6 py-3 md:px-10 md:py-3 rounded-lg text-xs md:text-sm transition-all duration-300 shadow-lg whitespace-nowrap">
                     <i class="fas fa-scissors mr-2"></i>NUESTROS SERVICIOS
                 </a>
                 
                 <!-- Botón Reservar -->
-                <a href="#reservar" class="btn-secondary btn-secondary-modern text-white px-8 py-4 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-base transition-all duration-300">
+                <a href="#reservar" class="btn-secondary btn-secondary-modern text-white px-6 py-3 md:px-10 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-300 whitespace-nowrap">
                     <i class="fas fa-calendar-check mr-2"></i>RESERVAR AHORA
                 </a>
             </div>
