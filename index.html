@@ -790,68 +790,44 @@
         .hero-overlay {
             background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(220,20,60,0.1));
         }
-
-        .btn-container {
-            transform: translateY(-50%);
-        }
-
-        @media (max-width: 768px) {
-            .btn-container {
-                top: 55% !important;
-                width: 90% !important;
-                left: 50% !important;
-                transform: translateX(-50%) translateY(-50%) !important;
-            }
-        }
-
-        @media (min-width: 769px) {
-            .btn-container {
-                top: 62% !important;
-                width: auto !important;
-                left: 50% !important;
-                transform: translateX(-50%) translateY(-50%) !important;
-            }
-        }
     </style>
 </head>
 <body>
     <!-- Hero Section -->
-    <section id="inicio" class="h-screen flex items-center justify-center relative pt-16 overflow-hidden">
-        <!-- Imagen de fondo para desktop -->
-        <div class="hidden md:block absolute inset-0 bg-center bg-cover bg-no-repeat" 
-             style="background-image: url('https://i.postimg.cc/V6dBz98S/Chat-GPT-Image-18-oct-2025-09-06-16.png');"></div>
+<section id="inicio" class="h-screen flex items-center justify-center relative pt-16 overflow-hidden">
+    <!-- Imagen de fondo para desktop -->
+    <div class="hidden md:block absolute inset-0 bg-center bg-cover bg-no-repeat" 
+         style="background-image: url('https://i.postimg.cc/V6dBz98S/Chat-GPT-Image-18-oct-2025-09-06-16.png');"></div>
 
-        <!-- Imagen de fondo para mobile -->
-        <div class="md:hidden absolute inset-0 bg-center bg-cover bg-no-repeat" 
-             style="background-image: url('https://i.postimg.cc/wMC9WW70/Corte-de-cabello-profesional-NK14.png');"></div>
+    <!-- Imagen de fondo para mobile -->
+    <div class="md:hidden absolute inset-0 bg-center bg-cover bg-no-repeat" 
+         style="background-image: url('https://i.postimg.cc/wMC9WW70/Corte-de-cabello-profesional-NK14.png');"></div>
 
-        <!-- Overlay moderno -->
-        <div class="absolute inset-0"></div>
+    <!-- Overlay moderno -->
+    <div class="absolute inset-0"></div>
 
-        <!-- Contenedor de botones perfectamente centrado -->
-        <div class="btn-container absolute z-10 left-1/2">
-            <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6">
-                <!-- Botón Servicios -->
-                <a href="#servicios" class="btn-primary btn-primary-modern text-white font-bold px-6 py-3 md:px-10 md:py-3 rounded-lg text-xs md:text-sm transition-all duration-300 shadow-lg whitespace-nowrap">
-                    <i class="fas fa-scissors mr-2"></i>NUESTROS SERVICIOS
-                </a>
-                
-                <!-- Botón Reservar -->
-                <a href="#reservar" class="btn-secondary btn-secondary-modern text-white px-6 py-3 md:px-10 md:py-3 rounded-lg font-bold text-xs md:text-sm transition-all duration-300 whitespace-nowrap">
-                    <i class="fas fa-calendar-check mr-2"></i>RESERVAR AHORA
-                </a>
-            </div>
-        </div>
-
-        <!-- Flecha animada de desplazamiento -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
-            <a href="#galeria" class="text-white text-2xl chevron-down inline-block">
-                <i class="fas fa-chevron-down"></i>
+    <!-- Contenedor de botones perfectamente centrado -->
+    <div class="container mx-auto px-4 text-center absolute z-10 md:top-[73%] top-[60%] transform -translate-y-1/2">
+        <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-8">
+            <!-- Botón Servicios -->
+            <a href="#servicios" class="btn-primary btn-primary-modern text-white font-bold px-8 py-4 md:px-10 md:py-4 rounded-lg text-sm md:text-base transition-all duration-300 shadow-lg">
+                <i class="fas fa-scissors mr-2"></i>NUESTROS SERVICIOS
+            </a>
+            
+            <!-- Botón Reservar -->
+            <a href="#reservar" class="btn-secondary btn-secondary-modern text-white px-8 py-4 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-base transition-all duration-300">
+                <i class="fas fa-calendar-check mr-2"></i>RESERVAR AHORA
             </a>
         </div>
-    </section>
-</body>
-</html>
+    </div>
+
+    <!-- Flecha animada de desplazamiento -->
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+        <a href="#galeria" class="text-white text-2xl chevron-down inline-block">
+            <i class="fas fa-chevron-down"></i>
+        </a>
+    </div>
+</section>
  <!-- Gallery Section -->
   <section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
   <div class="container mx-auto px-4">
