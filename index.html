@@ -468,7 +468,26 @@
       100% { width: 47px; right: 8px; top: 38px; }
     }
     
-    
+    /* BOTÓN SCROLL TO TOP - AHORA EN LA IZQUIERDA */
+    .scroll-to-top {
+      position: fixed;
+      bottom: 20px;
+      left: 20px; /* Cambiado de right a left */
+      background-color: var(--secondary-color);
+      color: var(--text-dark);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 99;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
     
     .scroll-to-top.visible {
       opacity: 1;
@@ -481,7 +500,7 @@
       color: white;
     }
     
-    /* Botón de WhatsApp */
+    /* Botón de WhatsApp - SE MANTIENE EN LA DERECHA */
     .whatsapp-button {
       position: fixed;
       bottom: 30px;
@@ -670,42 +689,147 @@
     <div id="mobile-menu-overlay" class="mobile-menu-overlay"></div>
   </header>
 
-  <!-- Hero Section - Versión con media queries -->
-<section id="inicio" class="h-screen flex items-center justify-center relative pt-16 overflow-hidden">
-  <!-- Imagen de fondo para desktop -->
-  <div class="hidden md:block absolute inset-0 bg-center bg-cover bg-no-repeat" style="background-image: url('https://scontent-lim1-1.xx.fbcdn.net/v/t39.30808-6/487504074_1070619461750017_7467014888687416715_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=9OGf9MZSeyIQ7kNvwGbv9Ex&_nc_oc=Adkvf0cMabWsTuqfVpjN5NrZJV8gAoNYdPeV73VlQ1PhAT7SHpnTs6jIWrHv75pM5q3wyOkqd8DMmE59vBDkyIw9&_nc_zt=23&_nc_ht=scontent-lim1-1.xx&_nc_gid=p2uertKKHd9ve-ON_EWU2w&oh=00_Afc2IzLTBPv-97Z650BFba3icUHhxWXhPYzMmKbQcJYC_Q&oe=68F778F6');"></div>
-  
-  <!-- Imagen de fondo para mobile (puedes usar la misma o una diferente optimizada para mobile) -->
-  <div class="md:hidden absolute inset-0 bg-center bg-cover bg-no-repeat" style="background-image: url('https://i.postimg.cc/wMC9WW70/Corte-de-cabello-profesional-NK14.png"></div>
-  
-  <!-- Sombra sutil -->
-  <div class="absolute inset-0 bg-black/30"></div>
+  .btn-secondary {
+            animation: slideInUp 0.8s ease-out 0.4s both;
+            position: relative;
+            overflow: hidden;
+        }<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NK14 Barber Salón</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animación de entrada para los botones */
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-  <div class="container mx-auto px-4 text-center relative z-10">
-    <h1 class="text-4xl md:text-7xl font-bold mb-4 hero-text fade-in">
-      <span class="text-[#c59d5f]">ELITE</span>CUTS
-    </h1>
-    <p class="text-lg md:text-2xl mb-8 hero-text max-w-2xl mx-auto fade-in fade-in-delay-1 hero-subtext">
-      Barbería Profesional donde el estilo se encuentra con la tradición
-    </p>
-    <div class="flex flex-col md:flex-row justify-center gap-4 fade-in fade-in-delay-2">
-      <a href="#servicios" class="btn-primary px-6 py-3 md:px-8 md:py-3 rounded-md text-sm md:text-base">
-        Nuestros Servicios
-      </a>
-      <a href="#reservar" class="border-2 border-[#c59d5f] text-[#c59d5f] px-6 py-3 md:px-8 md:py-3 rounded-md hover:bg-[#c59d5f] hover:text-black transition-all uppercase font-bold text-sm md:text-base">
-        Reservar Ahora
-      </a>
-    </div>
-  </div>
+        /* Animación de brillo */
+        @keyframes shimmer {
+            0% {
+                box-shadow: 0 0 0 0 rgba(220, 20, 60, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(220, 20, 60, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(220, 20, 60, 0);
+            }
+        }
 
-  <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce z-20">
-    <a href="#galeria" class="text-2xl">
-      <i class="fas fa-chevron-down"></i>
-    </a>
-  </div>
-</section>
+        /* Animación de pulso suave */
+        @keyframes softPulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
 
-  <!-- Gallery Section -->
+        /* Animación de texto flotante */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .btn-primary {
+            animation: slideInUp 0.8s ease-out 0.2s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-secondary {
+            animation: slideInUp 0.8s ease-out 0.4s both;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .chevron-down {
+            animation: float 2s ease-in-out infinite;
+        }
+
+        /* Gradientes modernos */
+        .btn-primary-modern {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+        }
+
+        .btn-primary-modern:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary-modern {
+            border: 2px solid #1a1a1a;
+            background: rgba(26, 26, 26, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn-secondary-modern:hover {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+            transform: translateY(-2px);
+        }
+
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(0,0,0,0.4), rgba(220,20,60,0.1));
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section id="inicio" class="h-screen flex items-center justify-center relative pt-16 overflow-hidden">
+        <!-- Imagen de fondo para desktop -->
+        <div class="hidden md:block absolute inset-0 bg-center bg-cover bg-no-repeat" 
+             style="background-image: url('https://i.postimg.cc/V6dBz98S/Chat-GPT-Image-18-oct-2025-09-06-16.png');"></div>
+
+        <!-- Imagen de fondo para mobile -->
+        <div class="md:hidden absolute inset-0 bg-center bg-cover bg-no-repeat" 
+             style="background-image: url('https://i.postimg.cc/wMC9WW70/Corte-de-cabello-profesional-NK14.png');"></div>
+
+        <!-- Overlay moderno -->
+        <div class="absolute inset-0"></div>
+
+        <!-- Contenedor de botones perfectamente centrado -->
+        <div class="container mx-auto px-4 text-center absolute z-10" style="top: 73%; transform: translateY(-50%);">
+            <div class="flex flex-col md:flex-row justify-center gap-6 md:gap-8">
+                <!-- Botón Servicios -->
+                <a href="#servicios" class="btn-primary btn-primary-modern text-white font-bold px-8 py-4 md:px-10 md:py-4 rounded-lg text-sm md:text-base transition-all duration-300 shadow-lg">
+                    <i class="fas fa-scissors mr-2"></i>NUESTROS SERVICIOS
+                </a>
+                
+                <!-- Botón Reservar -->
+                <a href="#reservar" class="btn-secondary btn-secondary-modern text-white px-8 py-4 md:px-10 md:py-4 rounded-lg font-bold text-sm md:text-base transition-all duration-300">
+                    <i class="fas fa-calendar-check mr-2"></i>RESERVAR AHORA
+                </a>
+            </div>
+        </div>
+
+        <!-- Flecha animada de desplazamiento -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20">
+            <a href="#galeria" class="text-white text-2xl chevron-down inline-block">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+</body>
+</html>
+ <!-- Gallery Section -->
   <section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12 md:mb-16 fade-in">
@@ -1567,12 +1691,12 @@
     </div>
   </footer>
 
-  <!-- Botón de WhatsApp -->
+  <!-- Botón de WhatsApp - DERECHA -->
   <a href="https://wa.me/1234567890?text=Hola,%20me%20gustaría%20saber%20más%20sobre%20los%20servicios%20de%20EliteCuts%20Barbería" target="_blank" class="whatsapp-button">
     <i class="fab fa-whatsapp fa-2x"></i>
   </a>
 
-  <!-- Scroll to top button - ahora en la izquierda -->
+  <!-- Scroll to top button - IZQUIERDA -->
   <div class="scroll-to-top" id="scroll-to-top">
     <i class="fas fa-arrow-up"></i>
   </div>
@@ -1661,7 +1785,7 @@
         document.getElementById('google-map').src = settings.location.mapUrl;
       }
       
-      // Mobile menu functionality - CORREGIDA
+      // Mobile menu functionality
       function setupMobileMenu() {
         const menuBtn = document.getElementById('menu-btn');
         const closeMenuBtn = document.getElementById('close-menu');
