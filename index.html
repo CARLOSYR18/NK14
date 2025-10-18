@@ -826,493 +826,608 @@
     </div>
 </section>
 
-  <!-- Service Section -->
-   <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NK14 Servicios</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body {
-            background: #0a0a0a;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NK14 Servicios</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #0a0a0a;
+    }
 
-        .section-title {
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 900;
-        }
+    .section-title {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 900;
+    }
 
-        .section-divider {
-            width: 80px;
-            height: 3px;
-            background: linear-gradient(to right, #a00000, #c59d5f);
-            margin: 1rem auto;
-            border-radius: 2px;
-        }
-    </style>
+    .section-divider {
+      width: 80px;
+      height: 3px;
+      background: linear-gradient(to right, #a00000, #c59d5f);
+      margin: 1rem auto;
+      border-radius: 2px;
+    }
+
+    @media (min-width: 768px) {
+      .pc-image {
+        width: 95vw;
+        max-width: 1600px;
+        border-radius: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Services Section -->
-    <section id="servicios" class="py-12 md:py-20 bg-[#121212]">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title text-white">
-                    NUESTROS <span class="text-[#c59d5f]">SERVICIOS</span>
-                </h2>
-                <div class="section-divider"></div>
-                <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
-                    Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
-                </p>
-            </div>
+  <!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servicios NK14</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#121212] text-white">
 
-            <!-- Imagen responsive -->
-            <div class="flex justify-center">
-                <!-- Imagen para móviles -->
-                <img src="https://i.postimg.cc/T20J8n3k/image.png" 
-                     alt="Servicios NK14 móvil" 
-                     class="rounded-2xl shadow-lg max-w-full h-auto block md:hidden">
-                
-                <!-- Imagen para PC -->
-                <img src="https://i.postimg.cc/SQrS4x8y/image.png" 
-                     alt="Servicios NK14 PC" 
-                     class="rounded-2xl shadow-lg max-w-full h-auto hidden md:block">
-            </div>
-        </div>
-    </section>
-</body>
-</html>
-
-<!-- Gallery Section -->
-  <section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
-  <div class="container mx-auto px-4">
-    <div class="text-center mb-12 md:mb-16 fade-in">
-      <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title text-white">
-        Galería de <span class="text-[#c59d5f]">Cortes</span>
-      </h2>
-      <div class="section-divider mx-auto w-20 h-1 bg-[#c59d5f] mb-4"></div>
-      <p class="mt-4 text-gray-400 max-w-2xl mx-auto px-4 text-lg">
-        Explora nuestra colección de los mejores estilos y cortes, obras maestras realizadas por nuestros barberos expertos.
-      </p>
-    </div>
-
-    <div class="flex flex-wrap justify-center gap-4 mb-8 fade-in">
-      <button class="gallery-filter-btn active px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="all">Todos</button>
-      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="classic">Clásicos</button>
-      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="modern">Modernos</button>
-      <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="fade">Fades</button>
-    </div>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 gallery-grid">
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
-        <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img src="https://i.postimg.cc/NM1tWgmn/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 1: Estilo Clásico"/>
-          <div class="gallery-overlay">
-            <span class="gallery-category">Clásico</span>
-            <h3 class="gallery-title">Estilo Clásico</h3>
-            <p class="gallery-description">Elegancia atemporal con líneas precisas y acabado impecable.</p>
-          </div>
-        </div>
-        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
-          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Clásico</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
-        <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img src="https://i.postimg.cc/9Q4v6mj0/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 2: Estilo Moderno"/>
-          <div class="gallery-overlay">
-            <span class="gallery-category">Moderno</span>
-            <h3 class="gallery-title">Estilo Moderno</h3>
-            <p class="gallery-description">Tendencias actuales con un toque de personalidad única.</p>
-          </div>
-        </div>
-        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
-          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Moderno</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="fade">
-        <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img src="https://i.postimg.cc/FKVGq81G/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 3: Fade Perfecto"/>
-          <div class="gallery-overlay">
-            <span class="gallery-category">Fade</span>
-            <h3 class="gallery-title">Fade Perfecto</h3>
-            <p class="gallery-description">Transiciones suaves y precisas que definen el estilo.</p>
-          </div>
-        </div>
-        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
-          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Fade Perfecto</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
-        <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img src="https://i.postimg.cc/XJh5DkK5/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 4: Barba Estilizada"/>
-          <div class="gallery-overlay">
-            <span class="gallery-category">Barba</span>
-            <h3 class="gallery-title">Barba Estilizada</h3>
-            <p class="gallery-description">Perfilado y cuidado meticuloso para una barba perfecta.</p>
-          </div>
-        </div>
-        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
-          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Barba Estilizada</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
-        <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img src="https://i.postimg.cc/MpDBDk9Y/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 5: Estilo Urbano"/>
-          <div class="gallery-overlay">
-            <span class="gallery-category">Urbano</span>
-            <h3 class="gallery-title">Estilo Urbano</h3>
-            <p class="gallery-description">Influencias urbanas con un acabado profesional.</p>
-          </div>
-        </div>
-        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
-          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Urbano</p>
-        </div>
-      </div>
-
-      <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
-        <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
-          <img src="https://i.postimg.cc/MTkzfH1r/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 6: Corte Premium"/>
-          <div class="gallery-overlay">
-            <span class="gallery-category">Premium</span>
-            <h3 class="gallery-title">Corte Premium</h3>
-            <p class="gallery-description">Detalles premium para clientes que buscan lo mejor.</p>
-          </div>
-        </div>
-        <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
-          <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Corte Premium</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
-      <button class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
-      <img src="" alt="Lightbox Image" class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain"/>
-      <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 md:gap-8">
-        <button id="prev-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"><i class="fas fa-chevron-left"></i></button>
-        <button id="next-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"><i class="fas fa-chevron-right"></i></button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<style>
-  .gallery-filter-btn {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .gallery-filter-btn::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: #c59d5f;
-    transition: all 0.3s ease;
-  }
-  
-  .gallery-filter-btn.active::after {
-    width: 100%;
-  }
-  
-  .gallery-item {
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-  }
-  
-  .gallery-item:hover {
-    transform: translateY(-10px);
-  }
-
-  .gallery-image {
-    filter: brightness(1) contrast(1) saturate(1) grayscale(0%);
-    transition: filter 0.4s ease;
-  }
-
-  .gallery-item:hover .gallery-image {
-    filter: brightness(0.5) contrast(1.1) saturate(0) grayscale(100%);
-  }
-  
-  .gallery-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85));
-    padding: 30px 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.4s ease;
-    z-index: 5;
-  }
-  
-  .gallery-item:hover .gallery-overlay {
-    opacity: 1;
-    transform: translateY(0);
-  }
-  
-  .gallery-category {
-    display: inline-block;
-    background-color: #c59d5f;
-    color: #000;
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.7rem;
-    font-weight: 700;
-    margin-bottom: 16px;
-    text-transform: uppercase;
-    letter-spacing: 1.2px;
-  }
-  
-  .gallery-title {
-    font-size: 1.6rem;
-    font-weight: 900;
-    margin-bottom: 12px;
-    color: #c59d5f;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    line-height: 1.2;
-  }
-  
-  .gallery-description {
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.95);
-    line-height: 1.7;
-    font-weight: 300;
-    max-width: 85%;
-  }
-  
-  .filter-active {
-    filter: grayscale(0%);
-    opacity: 1;
-    transition: all 0.3s ease;
-  }
-  
-  .filter-inactive {
-    filter: grayscale(100%);
-    opacity: 0.4;
-    pointer-events: none;
-    transition: all 0.3s ease;
-  }
-
-  @media (max-width: 768px) {
-    .gallery-overlay {
-      padding: 20px 15px 15px;
-    }
-    
-    .gallery-title {
-      font-size: 1.1rem;
-    }
-    
-    .gallery-description {
-      font-size: 0.8rem;
-    }
-  }
-</style>
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    const galleryImages = [
-      { url: 'https://i.postimg.cc/NM1tWgmn/image.png', alt: 'Corte 1: Estilo Clásico', category: 'classic' },
-      { url: 'https://i.postimg.cc/9Q4v6mj0/image.png', alt: 'Corte 2: Estilo Moderno', category: 'modern' },
-      { url: 'https://i.postimg.cc/FKVGq81G/image.png', alt: 'Corte 3: Fade Perfecto', category: 'fade' },
-      { url: 'https://i.postimg.cc/XJh5DkK5/image.png', alt: 'Corte 4: Barba Estilizada', category: 'classic' },
-      { url: 'https://i.postimg.cc/MpDBDk9Y/image.png', alt: 'Corte 5: Estilo Urbano', category: 'modern' },
-      { url: 'https://i.postimg.cc/MTkzfH1r/image.png', alt: 'Corte 6: Corte Premium', category: 'classic' }
-    ];
-    
-    const filterButtons = document.querySelectorAll('.gallery-filter-btn');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    
-    filterButtons.forEach(button => {
-      button.addEventListener('click', function() {
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        this.classList.add('active');
-        
-        const filterValue = this.getAttribute('data-filter');
-        
-        galleryItems.forEach(item => {
-          if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
-            item.classList.remove('filter-inactive');
-            item.classList.add('filter-active');
-          } else {
-            item.classList.remove('filter-active');
-            item.classList.add('filter-inactive');
-          }
-        });
-      });
-    });
-    
-    function setupLightbox() {
-      const galleryItems = document.querySelectorAll('.gallery-item');
-      const lightbox = document.getElementById('lightbox');
-      const lightboxImg = document.querySelector('.lightbox-img');
-      const closeLightbox = document.querySelector('.close-lightbox');
-      const prevBtn = document.getElementById('prev-btn');
-      const nextBtn = document.getElementById('next-btn');
-      
-      let currentImageIndex = 0;
-      
-      function openLightbox(index) {
-        currentImageIndex = index;
-        lightboxImg.src = galleryImages[index].url;
-        lightboxImg.alt = galleryImages[index].alt;
-        lightbox.classList.remove('hidden');
-        document.body.style.overflow = 'hidden';
-      }
-      
-      function closeLightboxFunc() {
-        lightbox.classList.add('hidden');
-        document.body.style.overflow = 'auto';
-      }
-      
-      function showNextImage() {
-        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-        lightboxImg.src = galleryImages[currentImageIndex].url;
-        lightboxImg.alt = galleryImages[currentImageIndex].alt;
-      }
-      
-      function showPrevImage() {
-        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-        lightboxImg.src = galleryImages[currentImageIndex].url;
-        lightboxImg.alt = galleryImages[currentImageIndex].alt;
-      }
-      
-      galleryItems.forEach((item, index) => {
-        item.addEventListener('click', function() {
-          openLightbox(index);
-        });
-      });
-      
-      closeLightbox.addEventListener('click', closeLightboxFunc);
-      prevBtn.addEventListener('click', showPrevImage);
-      nextBtn.addEventListener('click', showNextImage);
-      
-      lightbox.addEventListener('click', function(e) {
-        if(e.target === lightbox) closeLightboxFunc();
-      });
-      
-      document.addEventListener('keydown', function(e) {
-        if (lightbox.classList.contains('hidden')) return;
-        if (e.key === 'Escape') closeLightboxFunc();
-        else if (e.key === 'ArrowRight') showNextImage();
-        else if (e.key === 'ArrowLeft') showPrevImage();
-      });
-    }
-    
-    setupLightbox();
-  });
-</script>
-
-  <!-- Team Section -->
-  <section id="equipo" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
+  <!-- Sección completa -->
+  <section id="servicios" class="py-12 md:py-20 bg-[#121212]">
     <div class="container mx-auto px-4">
-      <div class="text-center mb-12 md:mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestro <span class="text-[#c59d5f]">Equipo</span></h2>
-        <div class="section-divider"></div>
+
+      <!-- Título principal -->
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">
+          NUESTROS <span class="text-[#c59d5f]">SERVICIOS</span>
+        </h2>
+        <div class="section-divider mx-auto w-20 h-1 bg-[#c59d5f] rounded-full"></div>
         <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
-          Conoce a nuestros barberos profesionales con años de experiencia y pasión por su trabajo
+          Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
         </p>
       </div>
-      
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 team-grid">
-        <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-48 md:h-64 relative">
-            <img src="https://cdn.pixabay.com/photo/2017/08/12/18/31/male-2634974_1280.jpg" alt="Carlos Mendoza" class="w-full h-full object-cover">
+
+      <!-- Imagen responsive -->
+      <div class="flex justify-center mb-16">
+        <!-- Imagen móvil -->
+        <img src="https://i.postimg.cc/T20J8n3k/image.png" 
+             alt="Servicios NK14 móvil" 
+             class="rounded-2xl shadow-lg max-w-full h-auto block md:hidden">
+
+        <!-- Imagen PC -->
+        <img src="https://i.postimg.cc/SQrS4x8y/image.png" 
+             alt="Servicios NK14 PC" 
+             class="pc-image shadow-2xl hidden md:block mx-auto rounded-2xl">
+      </div>
+
+      <!-- CORTES PLUS -->
+      <div class="text-center mb-12 md:mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">
+          CORTES <span class="text-[#c59d5f]">PLUS</span>
+        </h2>
+        <div class="section-divider mx-auto w-20 h-1 bg-[#c59d5f] rounded-full"></div>
+        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
+          Cortes extras para quienes buscan algo más exclusivo.
+        </p>
+      </div>
+
+      <!-- TARJETAS (6 en total) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- TARJETA 1 -->
+        <div class="bg-[#0a0a0a] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-64 bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://i.pinimg.com/474x/4b/a1/04/4ba1046bbc1b060eb2db67a2621c3845.jpg" alt="Mid Fake" 
+                 class="w-full h-full object-contain rounded-t-xl">
           </div>
-          <div class="team-info p-4 text-center">
-            <h3 class="text-lg md:text-xl font-bold">Carlos Mendoza</h3>
-            <p class="text-[#c59d5f] text-sm md:text-base">Maestro Barbero</p>
-          </div>
-          <div class="team-social flex justify-center space-x-3">
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </div>
-        </div>
-        
-        <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-48 md:h-64 relative">
-            <img src="https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_1280.jpg" alt="Laura Guzmán" class="w-full h-full object-cover">
-          </div>
-          <div class="team-info p-4 text-center">
-            <h3 class="text-lg md:text-xl font-bold">Laura Guzmán</h3>
-            <p class="text-[#c59d5f] text-sm md:text-base">Estilista Senior</p>
-          </div>
-          <div class="team-social flex justify-center space-x-3">
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-twitter"></i>
-            </a>
+          <div class="p-6 text-center">
+            <h3 class="text-[#c59d5f] text-xl font-bold mb-2">MID FAKE</h3>
+            <p class="text-gray-400 mb-3">Degradado perfecto personalizado según la forma de tu cabeza y estilo.</p>
+            <p class="text-white font-semibold">S/22</p>
           </div>
         </div>
-        
-        <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-48 md:h-64 relative">
-            <img src="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_1280.jpg" alt="Diego Sánchez" class="w-full h-full object-cover">
+
+        <!-- TARJETA 2 -->
+        <div class="bg-[#0a0a0a] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-64 bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5I0CkifgP2HBBrFhavicMU88O3HbiT8DHlg&s" alt="LOW FAKE" 
+                 class="w-full h-full object-contain rounded-t-xl">
           </div>
-          <div class="team-info p-4 text-center">
-            <h3 class="text-lg md:text-xl font-bold">Diego Sánchez</h3>
-            <p class="text-[#c59d5f] text-sm md:text-base">Especialista en Barbas</p>
-          </div>
-          <div class="team-social flex justify-center space-x-3">
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-twitter"></i>
-            </a>
+          <div class="p-6 text-center">
+            <h3 class="text-[#c59d5f] text-xl font-bold mb-2">LOW FAKE</h3>
+            <p class="text-gray-400 mb-3">Degradado perfecto personalizado según la forma de tu cabeza y estilo.</p>
+            <p class="text-white font-semibold">S/25</p>
           </div>
         </div>
-        
-        <div class="team-card rounded-lg overflow-hidden fade-in">
-          <div class="h-48 md:h-64 relative">
-            <img src="https://cdn.pixabay.com/photo/2018/07/25/14/29/man-3560661_1280.jpg" alt="Martín Rodríguez" class="w-full h-full object-cover">
+
+        <!-- TARJETA 3 -->
+        <div class="bg-[#0a0a0a] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-64 bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://i.pinimg.com/1200x/9d/1e/4a/9d1e4a65e72186f7321fce9c720797bf.jpg" alt="MULET" 
+                 class="w-full h-full object-contain rounded-t-xl">
           </div>
-          <div class="team-info p-4 text-center">
-            <h3 class="text-lg md:text-xl font-bold">Martín Rodríguez</h3>
-            <p class="text-[#c59d5f] text-sm md:text-base">Barbero Junior</p>
-          </div>
-          <div class="team-social flex justify-center space-x-3">
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-instagram"></i>
-            </a>
-            <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
-              <i class="fab fa-twitter"></i>
-            </a>
+          <div class="p-6 text-center">
+            <h3 class="text-[#c59d5f] text-xl font-bold mb-2">MULET</h3>
+            <p class="text-gray-400 mb-3">Degradado perfecto personalizado según la forma de tu cabeza y estilo.</p>
+            <p class="text-white font-semibold">S/12</p>
           </div>
         </div>
+
+        <!-- TARJETA 4 -->
+        <div class="bg-[#0a0a0a] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-64 bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://i.pinimg.com/1200x/e2/86/cb/e286cb1e41bd052a80ab509819a230b6.jpg" alt="WOLF CUT" 
+                 class="w-full h-full object-contain rounded-t-xl">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-[#c59d5f] text-xl font-bold mb-2">WOLF CUT</h3>
+            <p class="text-gray-400 mb-3">Degradado perfecto personalizado según la forma de tu cabeza y estilo.</p>
+            <p class="text-white font-semibold">S/18</p>
+          </div>
+        </div>
+
+        <!-- TARJETA 5 -->
+        <div class="bg-[#0a0a0a] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-64 bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://fadehaircut.co.uk/wp-content/uploads/2025/05/high-taper-fade-haircut-1.jpg" alt="High Fade" 
+                 class="w-full h-full object-contain rounded-t-xl">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-[#c59d5f] text-xl font-bold mb-2">HIGH FADE</h3>
+            <p class="text-gray-400 mb-3">Corte moderno para los más pequeños, con paciencia y cuidado.</p>
+            <p class="text-white font-semibold">S/15</p>
+          </div>
+        </div>
+
+        <!-- TARJETA 6 -->
+        <div class="bg-[#0a0a0a] border border-gray-700 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="w-full h-64 bg-black flex items-center justify-center overflow-hidden">
+            <img src="https://groomingrelentless.com/wp-content/uploads/2025/05/French-Crop-Fade.webp" alt="FRENCH CROP" 
+                 class="w-full h-full object-contain rounded-t-xl">
+          </div>
+          <div class="p-6 text-center">
+            <h3 class="text-[#c59d5f] text-xl font-bold mb-2">FRENCH CROP</h3>
+            <p class="text-gray-400 mb-3">Incluye corte, barba, lavado y tratamiento capilar. La experiencia NK14 completa.</p>
+            <p class="text-white font-semibold">S/45</p>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
+
+</body>
+</html>
+
+
+        <!-- Gallery Section -->
+          <section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
+          <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16 fade-in">
+              <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title text-white">
+                Galería de <span class="text-[#c59d5f]">Cortes</span>
+              </h2>
+              <div class="section-divider mx-auto w-20 h-1 bg-[#c59d5f] mb-4"></div>
+              <p class="mt-4 text-gray-400 max-w-2xl mx-auto px-4 text-lg">
+                Explora nuestra colección de los mejores estilos y cortes, obras maestras realizadas por nuestros barberos expertos.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-8 fade-in">
+              <button class="gallery-filter-btn active px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="all">Todos</button>
+              <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="classic">Clásicos</button>
+              <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="modern">Modernos</button>
+              <button class="gallery-filter-btn px-5 py-2 rounded-full text-white bg-transparent border border-[#c59d5f] hover:bg-[#c59d5f] hover:text-black transition-all" data-filter="fade">Fades</button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 gallery-grid">
+              <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
+                <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
+                  <img src="https://i.postimg.cc/NM1tWgmn/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 1: Estilo Clásico"/>
+                  <div class="gallery-overlay">
+                    <span class="gallery-category">Clásico</span>
+                    <h3 class="gallery-title">Estilo Clásico</h3>
+                    <p class="gallery-description">Elegancia atemporal con líneas precisas y acabado impecable.</p>
+                  </div>
+                </div>
+                <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+                  <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Clásico</p>
+                </div>
+              </div>
+
+              <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
+                <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
+                  <img src="https://i.postimg.cc/9Q4v6mj0/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 2: Estilo Moderno"/>
+                  <div class="gallery-overlay">
+                    <span class="gallery-category">Moderno</span>
+                    <h3 class="gallery-title">Estilo Moderno</h3>
+                    <p class="gallery-description">Tendencias actuales con un toque de personalidad única.</p>
+                  </div>
+                </div>
+                <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+                  <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Moderno</p>
+                </div>
+              </div>
+
+              <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="fade">
+                <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
+                  <img src="https://i.postimg.cc/FKVGq81G/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 3: Fade Perfecto"/>
+                  <div class="gallery-overlay">
+                    <span class="gallery-category">Fade</span>
+                    <h3 class="gallery-title">Fade Perfecto</h3>
+                    <p class="gallery-description">Transiciones suaves y precisas que definen el estilo.</p>
+                  </div>
+                </div>
+                <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+                  <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Fade Perfecto</p>
+                </div>
+              </div>
+
+              <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
+                <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
+                  <img src="https://i.postimg.cc/XJh5DkK5/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 4: Barba Estilizada"/>
+                  <div class="gallery-overlay">
+                    <span class="gallery-category">Barba</span>
+                    <h3 class="gallery-title">Barba Estilizada</h3>
+                    <p class="gallery-description">Perfilado y cuidado meticuloso para una barba perfecta.</p>
+                  </div>
+                </div>
+                <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+                  <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Barba Estilizada</p>
+                </div>
+              </div>
+
+              <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="modern">
+                <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
+                  <img src="https://i.postimg.cc/MpDBDk9Y/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 5: Estilo Urbano"/>
+                  <div class="gallery-overlay">
+                    <span class="gallery-category">Urbano</span>
+                    <h3 class="gallery-title">Estilo Urbano</h3>
+                    <p class="gallery-description">Influencias urbanas con un acabado profesional.</p>
+                  </div>
+                </div>
+                <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+                  <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Estilo Urbano</p>
+                </div>
+              </div>
+
+              <div class="gallery-card fade-in bg-transparent rounded-xl overflow-hidden shadow-lg border-0 hover:shadow-[0_0_30px_rgba(197,157,95,0.6)] transition-all duration-300 flex flex-col h-full gallery-item filter-active" data-category="classic">
+                <div class="relative group cursor-pointer overflow-hidden flex-grow min-h-[300px] rounded-lg">
+                  <img src="https://i.postimg.cc/MTkzfH1r/image.png" class="gallery-image w-full h-full object-cover" alt="Corte 6: Corte Premium"/>
+                  <div class="gallery-overlay">
+                    <span class="gallery-category">Premium</span>
+                    <h3 class="gallery-title">Corte Premium</h3>
+                    <p class="gallery-description">Detalles premium para clientes que buscan lo mejor.</p>
+                  </div>
+                </div>
+                <div class="relative bg-[#0f0f0f] py-4 px-4 border-t-2 border-b-2 border-l-2 border-r-2 border-white rounded-b-lg">
+                  <p class="text-white text-center text-xs font-bold tracking-[1.5px] uppercase">Corte Premium</p>
+                </div>
+              </div>
+            </div>
+
+            <div id="lightbox" class="hidden fixed inset-0 bg-black bg-opacity-95 z-50 flex items-center justify-center p-4">
+              <button class="close-lightbox absolute top-4 md:top-8 right-4 md:right-8 text-white text-3xl md:text-4xl hover:text-[#c59d5f] transition-colors">&times;</button>
+              <img src="" alt="Lightbox Image" class="lightbox-img max-w-full max-h-[70vh] md:max-w-4xl md:max-h-[80vh] object-contain"/>
+              <div class="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 flex gap-4 md:gap-8">
+                <button id="prev-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"><i class="fas fa-chevron-left"></i></button>
+                <button id="next-btn" class="lightbox-control text-white text-xl md:text-2xl hover:text-[#c59d5f] transition-colors"><i class="fas fa-chevron-right"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <style>
+          .gallery-filter-btn {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+          }
+          
+          .gallery-filter-btn::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: #c59d5f;
+            transition: all 0.3s ease;
+          }
+          
+          .gallery-filter-btn.active::after {
+            width: 100%;
+          }
+          
+          .gallery-item {
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+          }
+          
+          .gallery-item:hover {
+            transform: translateY(-10px);
+          }
+
+          .gallery-image {
+            filter: brightness(1) contrast(1) saturate(1) grayscale(0%);
+            transition: filter 0.4s ease;
+          }
+
+          .gallery-item:hover .gallery-image {
+            filter: brightness(0.5) contrast(1.1) saturate(0) grayscale(100%);
+          }
+          
+          .gallery-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.85));
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+            z-index: 5;
+          }
+          
+          .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+            transform: translateY(0);
+          }
+          
+          .gallery-category {
+            display: inline-block;
+            background-color: #c59d5f;
+            color: #000;
+            padding: 8px 16px;
+            border-radius: 25px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1.2px;
+          }
+          
+          .gallery-title {
+            font-size: 1.6rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+            color: #c59d5f;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+          }
+          
+          .gallery-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.95);
+            line-height: 1.7;
+            font-weight: 300;
+            max-width: 85%;
+          }
+          
+          .filter-active {
+            filter: grayscale(0%);
+            opacity: 1;
+            transition: all 0.3s ease;
+          }
+          
+          .filter-inactive {
+            filter: grayscale(100%);
+            opacity: 0.4;
+            pointer-events: none;
+            transition: all 0.3s ease;
+          }
+
+          @media (max-width: 768px) {
+            .gallery-overlay {
+              padding: 20px 15px 15px;
+            }
+            
+            .gallery-title {
+              font-size: 1.1rem;
+            }
+            
+            .gallery-description {
+              font-size: 0.8rem;
+            }
+          }
+        </style>
+
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const galleryImages = [
+              { url: 'https://i.postimg.cc/NM1tWgmn/image.png', alt: 'Corte 1: Estilo Clásico', category: 'classic' },
+              { url: 'https://i.postimg.cc/9Q4v6mj0/image.png', alt: 'Corte 2: Estilo Moderno', category: 'modern' },
+              { url: 'https://i.postimg.cc/FKVGq81G/image.png', alt: 'Corte 3: Fade Perfecto', category: 'fade' },
+              { url: 'https://i.postimg.cc/XJh5DkK5/image.png', alt: 'Corte 4: Barba Estilizada', category: 'classic' },
+              { url: 'https://i.postimg.cc/MpDBDk9Y/image.png', alt: 'Corte 5: Estilo Urbano', category: 'modern' },
+              { url: 'https://i.postimg.cc/MTkzfH1r/image.png', alt: 'Corte 6: Corte Premium', category: 'classic' }
+            ];
+            
+            const filterButtons = document.querySelectorAll('.gallery-filter-btn');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            
+            filterButtons.forEach(button => {
+              button.addEventListener('click', function() {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                galleryItems.forEach(item => {
+                  if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.classList.remove('filter-inactive');
+                    item.classList.add('filter-active');
+                  } else {
+                    item.classList.remove('filter-active');
+                    item.classList.add('filter-inactive');
+                  }
+                });
+              });
+            });
+            
+            function setupLightbox() {
+              const galleryItems = document.querySelectorAll('.gallery-item');
+              const lightbox = document.getElementById('lightbox');
+              const lightboxImg = document.querySelector('.lightbox-img');
+              const closeLightbox = document.querySelector('.close-lightbox');
+              const prevBtn = document.getElementById('prev-btn');
+              const nextBtn = document.getElementById('next-btn');
+              
+              let currentImageIndex = 0;
+              
+              function openLightbox(index) {
+                currentImageIndex = index;
+                lightboxImg.src = galleryImages[index].url;
+                lightboxImg.alt = galleryImages[index].alt;
+                lightbox.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+              }
+              
+              function closeLightboxFunc() {
+                lightbox.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+              }
+              
+              function showNextImage() {
+                currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+                lightboxImg.src = galleryImages[currentImageIndex].url;
+                lightboxImg.alt = galleryImages[currentImageIndex].alt;
+              }
+              
+              function showPrevImage() {
+                currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+                lightboxImg.src = galleryImages[currentImageIndex].url;
+                lightboxImg.alt = galleryImages[currentImageIndex].alt;
+              }
+              
+              galleryItems.forEach((item, index) => {
+                item.addEventListener('click', function() {
+                  openLightbox(index);
+                });
+              });
+              
+              closeLightbox.addEventListener('click', closeLightboxFunc);
+              prevBtn.addEventListener('click', showPrevImage);
+              nextBtn.addEventListener('click', showNextImage);
+              
+              lightbox.addEventListener('click', function(e) {
+                if(e.target === lightbox) closeLightboxFunc();
+              });
+              
+              document.addEventListener('keydown', function(e) {
+                if (lightbox.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeLightboxFunc();
+                else if (e.key === 'ArrowRight') showNextImage();
+                else if (e.key === 'ArrowLeft') showPrevImage();
+              });
+            }
+            
+            setupLightbox();
+          });
+        </script>
+
+          <!-- Team Section -->
+          <section id="equipo" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
+            <div class="container mx-auto px-4">
+              <div class="text-center mb-12 md:mb-16 fade-in">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestro <span class="text-[#c59d5f]">Equipo</span></h2>
+                <div class="section-divider"></div>
+                <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
+                  Conoce a nuestros barberos profesionales con años de experiencia y pasión por su trabajo
+                </p>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 team-grid">
+                <div class="team-card rounded-lg overflow-hidden fade-in">
+                  <div class="h-48 md:h-64 relative">
+                    <img src="https://cdn.pixabay.com/photo/2017/08/12/18/31/male-2634974_1280.jpg" alt="Carlos Mendoza" class="w-full h-full object-cover">
+                  </div>
+                  <div class="team-info p-4 text-center">
+                    <h3 class="text-lg md:text-xl font-bold">Carlos Mendoza</h3>
+                    <p class="text-[#c59d5f] text-sm md:text-base">Maestro Barbero</p>
+                  </div>
+                  <div class="team-social flex justify-center space-x-3">
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="team-card rounded-lg overflow-hidden fade-in">
+                  <div class="h-48 md:h-64 relative">
+                    <img src="https://cdn.pixabay.com/photo/2019/02/11/20/20/woman-3990680_1280.jpg" alt="Laura Guzmán" class="w-full h-full object-cover">
+                  </div>
+                  <div class="team-info p-4 text-center">
+                    <h3 class="text-lg md:text-xl font-bold">Laura Guzmán</h3>
+                    <p class="text-[#c59d5f] text-sm md:text-base">Estilista Senior</p>
+                  </div>
+                  <div class="team-social flex justify-center space-x-3">
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="team-card rounded-lg overflow-hidden fade-in">
+                  <div class="h-48 md:h-64 relative">
+                    <img src="https://cdn.pixabay.com/photo/2016/11/18/19/07/happy-1836445_1280.jpg" alt="Diego Sánchez" class="w-full h-full object-cover">
+                  </div>
+                  <div class="team-info p-4 text-center">
+                    <h3 class="text-lg md:text-xl font-bold">Diego Sánchez</h3>
+                    <p class="text-[#c59d5f] text-sm md:text-base">Especialista en Barbas</p>
+                  </div>
+                  <div class="team-social flex justify-center space-x-3">
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </div>
+                </div>
+                
+                <div class="team-card rounded-lg overflow-hidden fade-in">
+                  <div class="h-48 md:h-64 relative">
+                    <img src="https://cdn.pixabay.com/photo/2018/07/25/14/29/man-3560661_1280.jpg" alt="Martín Rodríguez" class="w-full h-full object-cover">
+                  </div>
+                  <div class="team-info p-4 text-center">
+                    <h3 class="text-lg md:text-xl font-bold">Martín Rodríguez</h3>
+                    <p class="text-[#c59d5f] text-sm md:text-base">Barbero Junior</p>
+                  </div>
+                  <div class="team-social flex justify-center space-x-3">
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="javascript:void(0)" class="text-white hover:text-[#c59d5f]">
+                      <i class="fab fa-twitter"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
   <!-- Booking Section -->
   <section id="reservar" class="py-12 md:py-20 bg-cover bg-fixed bg-center section-padding" style="background-image: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://cdn.pixabay.com/photo/2016/11/19/13/57/beauty-salon-1839410_1280.jpg');">
