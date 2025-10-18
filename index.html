@@ -825,7 +825,61 @@
         </a>
     </div>
 </section>
- <!-- Gallery Section -->
+
+  <!-- Service Section -->
+   <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NK14 Servicios</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #0a0a0a;
+        }
+
+        .section-title {
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 900;
+        }
+
+        .section-divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #a00000, #c59d5f);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Services Section -->
+    <section id="servicios" class="py-12 md:py-20 bg-[#121212]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12 md:mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title text-white">
+                    NUESTROS <span class="text-[#c59d5f]">SERVICIOS</span>
+                </h2>
+                <div class="section-divider"></div>
+                <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
+                    Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
+                </p>
+            </div>
+
+            <!-- Imagen de servicios -->
+            <div class="flex justify-center">
+                <img src="https://i.postimg.cc/T20J8n3k/image.png" 
+                     alt="Servicios NK14" 
+                     class="rounded-2xl shadow-lg max-w-full h-auto">
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+<!-- Gallery Section -->
   <section id="galeria" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
   <div class="container mx-auto px-4">
     <div class="text-center mb-12 md:mb-16 fade-in">
@@ -1154,89 +1208,6 @@
     setupLightbox();
   });
 </script>
-
-  <!-- Services Section -->
-  <section id="servicios" class="py-12 md:py-20 bg-[#121212] section-padding">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-12 md:mb-16 fade-in">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title">Nuestros <span class="text-[#c59d5f]">Servicios</span></h2>
-        <div class="section-divider"></div>
-        <p class="mt-4 text-gray-300 max-w-xl mx-auto px-4">
-          Ofrecemos una amplia gama de servicios profesionales para que luzcas y te sientas increíble
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 service-grid">
-        
-        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="https://i.postimg.cc/yxQy6kbw/image.png" alt="Corte Clásico" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Clásico</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte tradicional con estilo atemporal</p>
-            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€15</div>
-          </div>
-        </div>
-
-        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="https://citas.hairspremium.com/wp-content/uploads/2021/09/corte-de-cabello-tradicional.jpg" alt="Corte Premium" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Corte Premium</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, lavado y peinado premium</p>
-            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
-          </div>
-        </div>
-
-        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="https://i.postimg.cc/9F9h7ZWt/image.png" alt="Corte Niño" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Fakes</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Para jóvenes</p>
-            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€25</div>
-          </div>
-        </div>
-
-        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="https://i.postimg.cc/76SRLM3X/image.png" alt="Ondulado de Cabello" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Ondulado de Cabello</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Con técnica profesional y productos de styling</p>
-            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€18</div>
-          </div>
-        </div>
-
-        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="https://www.blog.cazcarra.com/wp-content/uploads/2017/02/tijeras.jpg" alt="Arreglo de Barba" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Arreglo de Barba</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Recorte y perfilado de barba</p>
-            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€12</div>
-          </div>
-        </div>
-
-        <div class="metal-card rounded-lg overflow-hidden service-card fade-in bg-[#1a1a1a]">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="https://i.postimg.cc/W1S06Dny/image.png" alt="Paquete Completo" class="w-full h-full object-cover">
-          </div>
-          <div class="p-4 md:p-6">
-            <h3 class="text-lg md:text-xl font-bold text-center mb-2">Paquete Completo</h3>
-            <p class="text-gray-400 text-center mb-4 text-sm md:text-base">Corte, barba y tratamiento facial</p>
-            <div class="text-center text-[#c59d5f] font-bold text-lg md:text-xl">€35</div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
 
   <!-- Team Section -->
   <section id="equipo" class="py-12 md:py-20 bg-[#0a0a0a] section-padding">
